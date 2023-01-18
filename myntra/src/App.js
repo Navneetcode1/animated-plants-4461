@@ -1,10 +1,12 @@
-
 import './App.css';
+import Navbar from './components/Navbar';
+import AllRoutes from './pages/AllRoutes';
 
 function App() {
   return (
     <div className="App">
-      HELLO THIS MYNTRA WEBSITE
+      <Navbar/>
+      <AllRoutes/>
     </div>
   );
 }
