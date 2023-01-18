@@ -7,7 +7,7 @@ import { ProductCard } from './ProductCard';
 const ProductList = () => {
 
     const dispatch = useDispatch();
-    const products = useDispatch((store) => store.products);
+    const products = useSelector((store) => store.products);
 
     useEffect(() => {
         dispatch(getProduct)
@@ -16,9 +16,9 @@ const ProductList = () => {
   return (
     <div>
         {
-            // products.length > 0 && products.map((el) => {
-            //     return <ProductCard key={el.id} item={el} />
-            // })
+            products.length > 0 && products.map((el) => {
+                return <ProductCard key={el.id+Math.random()} item={el} />
+            })
         }
     </div>
   )
