@@ -1,6 +1,11 @@
 import React from 'react'
 import * as types from "./usersignupactiontype"
-const usersignupreducer = () => {
+const init = {
+    isError:false,
+    isloading:false,
+    data:[]
+}
+const usersignupreducer = (state=init,action) => {
     switch(action.type){
         case types.POSTDATAREQUEST:{
            return{
