@@ -1,5 +1,5 @@
 import React from 'react'
-import * as types from "./adminactiontype"
+import * as types from "./lginactiontype"
 
 const initstate = {
     isError : false,
@@ -7,7 +7,7 @@ const initstate = {
     admindata :[],
 }
 const loginreducer = (state=initstate,{type,payload}) => {
-     switch (action.type){
+     switch (type){
          case types.GETADMINDATAREQUEST:{
             return{
                 ...state,
@@ -21,7 +21,7 @@ const loginreducer = (state=initstate,{type,payload}) => {
                 ...state,
               isError : false,
               isLoading:false,
-              admindata : action.payload
+              admindata : payload
             }
          }
          case types.GETADMINDATAFAILURE:{
