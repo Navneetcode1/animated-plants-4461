@@ -1,0 +1,6 @@
+.side {
+    width: 18%;
+    height: 100vh;
+    position: fixed;
+    border: 1px solid red;
+}

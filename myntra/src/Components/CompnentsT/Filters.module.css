@@ -1,0 +1,30 @@
+.filterMain {
+    display: flex;
+    justify-content: space-around;
+    height: 50px;
+}
+
+.addOns {
+    width: 50%;
+    border: 1px solid black;
+    display: flex;
+    justify-content: space-between;
+   
+    align-items: center;
+}
+.addOns button {
+    border: none;
+    background-color: transparent;
+    height: 30px;
+    color: gray;
+    border-radius:30px;
+    font-size: 12px;
+}
+
+.addOns button:hover {
+    background-color: #F4F4F5;
+}
+
+.drop select{
+    width: 200px;
+}

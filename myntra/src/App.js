@@ -1,12 +1,13 @@
 
 import './App.css';
-import ProductList from './Components/ProductList';
+// import ProductList from './Components/CompnentsT/ProductList';
+// import Product from './PagesT/Product';
 
 function App() {
   return (
     <div className="App">
       HELLO THIS MYNTRA WEBSITE
-      <ProductList />
+  
     </div>
   );
 }
