@@ -9,8 +9,9 @@ import Sidebar from './Sidebar';
 const ProductList = () => {
 
     const dispatch = useDispatch();
-    const products = useSelector((store) => store.products);
-    const isLoading = useSelector((store) => store.isLoading)
+    const products = useSelector((store) => store.productDatareducer.products);
+    // console.log(products)
+    const isLoading = useSelector((store) => store.productDatareducer.isLoading)
 
     useEffect(() => {
         // dispatch()
