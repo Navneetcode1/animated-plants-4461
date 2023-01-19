@@ -64,8 +64,9 @@
         /* height: 50px; */
     }
     .leftdiv{
+        border: 5px solid green;
         border-right: .5px solid #535766;
-        height: 100px;
+        /* height: 100px; */
         width: 64%;
         padding: 32px 20px 0px 0px
     }
@@ -74,29 +75,292 @@
         border-radius: 3px;
         background-color: #ffffff;
         margin: 0px 0px 8px;
-        padding: 16px
+        padding:  8px 16px;
+        display: flex;
+        justify-content: space-between;
     }
+
+    .addresscontent{
+        display: flex;
+        font-size: 12px;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 70%;
+        height: 39px;
+        border: 1px solid green;
+    }
+.addresscontent p{
+    padding-left: 4px;
+}
+
+
+
+
+
+
+    .addressbtn{
+        font-size: 12px;
+        box-sizing: border-box;
+        width: 30%;
+        /* border:1px solid #ff3f6c; */
+        border-radius: 2px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .addressbtn button{
+        font-size: 11px;
+        box-sizing: border-box;
+        width: 120px;
+        color: #ff3f6c;
+        height: 30px;
+        border:1px solid #ff3f6c;
+        border-radius: 2px;
+    
+    }
+
+
+
+
+
+
+
     .avl_offers{
         border: 1px solid gray ;
-        padding: 16px 18px 12px;
+        padding: 10px 18px 10px;
         margin: 0px 0px 10px;
         background-color: #ffffff;
+        display: flex;
+        border-radius: 2px;
+        flex-direction: column;
+       
     }
+
+    .offershead{
+        padding-left: 4px;
+        width: 100%;
+        height: 17px;
+        color: #535766;
+        margin: 0px 0px 3px;
+        border: 1px solid salmon;
+        font-size: 12px;
+        font-weight: bold;
+        text-align: left;
+    }
+
+    .offersheadcre{
+        width: 100%;
+        height: 17px;
+        color: #535766;
+        margin: 0px 0px 3px;
+        border: 1px solid salmon;
+        font-size: 12px;
+       
+        text-align: left;
+    }
+
+    .offersheadcre > button{
+        font-size: 12px;
+        /* box-sizing: border-box; */
+        /* height: 100%; */
+        width: 180px;
+        /* border:1px solid #ff3f6c; */
+        text-align: left;
+        border-radius: 2px;
+    }
+
+
+
+
+
+
+
     .feesdiv{
         border: 1px solid gray ;
         background: #ffffff;
         padding: 8px;
         margin: 0px 0px 12px;
     }
+
+
+.conhead{
+    padding-left: 4px;
+    width: 100%;
+    height: 17px;
+    /* color: #535766; */
+    margin: 0px 0px 3px;
+    border: 1px solid salmon;
+    font-size: 12px;
+    text-align: left;
+}
+
+.conhead b{
+    font-weight: bold;
+}
+
+
+
+
+
+.proditemcardlist{
+    height: 100px;
+    width: 100%;
+    border: 0.5px solid red;
+}
+
+.proditemcardcard{
+    height: 186px;
+    /* width: 594px; */
+    background-color: white;
+    padding: 12px 12px 0px;
+    display: flex;
+    border: 3px solid violet;
+}
+
+.actualcard{
+    padding: 0px 0px 0px 12px;
+    margin: 0px 0px 12px 111px;
+    border: 3px solid darkorange;
+}
+
+.brandname{
+    text-align: left;
+    color: black;
+    font-size: 14px;
+    margin: 0px 0px 4px;
+    border: 0.5px solid darkmagenta;
+}
+
+.productname{
+    text-align: left;
+    color: black;
+    font-size: 14px;
+    margin: 0px 6px 0px 0px;
+    border: 0.5px solid darkmagenta;
+}
+
+.soldby{
+    text-align: left;
+    color: #94969f;
+    font-size: 12px;
+}
+
+.itemaincontainer{
+    padding: 8px 0px;
+    display: flex;
+    height: 36px;
+}
+
+.itemaincontainer > div{
+    margin: 0px 8px 0px 0px;
+}
+
+.itemaincontainer > div > div{
+    margin: 0px 12px 0px 0px;
+    padding: 2px 8px;
+    background-color: #f5f5f6;
+}
+
+.itemaincontainer > div > div > div{
+    color: black;
+    font-size: 14px;
+}
     
     
     .rightdiv{
         border-left: .5px solid #535766;
-        height: 100px;
+        border: 4px solid red;
+        /* height: 100px; */
         width: 36%;
         padding: 24px 0px 0px 16px;
     }
 
+    .coupondiv{
+        border: 2px solid lawngreen;
+        height: 72px;
+        width: 100%;
+    }
+
+    .couponhead{
+        width: 100%;
+        height: 17px;
+        color: #535766;
+        margin: 0px 0px 12px;
+        border: 1px solid salmon;
+        font-size: 12px;
+        font-weight: bold;
+        text-align: left;
+    }
+
+    .couponbasecontent{
+        font-size: 14px;
+        height: 43px;
+        padding: 0px 0px 12px 36px;
+        border: 1px solid saddlebrown;
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    .contenttext{
+        font-size: 14px;
+        padding: 7px 0px;
+        color: #282c3f;
+        font-weight:300
+    }
+    .applybtn{
+        /* border:1px solid #ff3f6c; */
+        color: #ff3f6c;
+        border-radius: 2px;
+        padding: 8px 12px;
+        margin-top: 8px;
+        margin-right: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .applybtn button{
+        font-size: 12px;
+        box-sizing: border-box;
+        /* height: 100%; */
+        width: 60px;
+        border:1px solid #ff3f6c;
+        border-radius: 2px;
+    
+    }
+
+
+    .giftdiv{
+        border: 7px solid lawngreen;
+        height: 72px;
+        width: 100%;
+    }
+
+.gifthead{
+
+        width: 100%;
+        height: 17px;
+        color: #535766;
+        margin: 12px 0px ;
+        border: 1px solid salmon;
+        font-size: 12px;
+        font-weight:lighter;
+        text-align: left;
+
+}
+
+    .giftper{
+            /* width: 100%;
+            height: 17px;
+            color: #535766;
+           
+            margin: 0px 0px 12px; 
+            border: 10px solid salmon; 
+            font-size: 12px;
+            font-weight: bold;
+            text-align: left; */
+    }
 
 @media screen and (min-width:360px) and (max-width:576px) {
     .twosections{

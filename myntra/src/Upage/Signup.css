@@ -1,0 +1,120 @@
+.form{
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+    border-radius: 5%;
+    width: 50%;
+    height: 70%;
+    margin: auto;
+    /* border: 1px solid red; */
+    margin-top: 2%;
+   text-align: center;
+   padding: 9%;
+
+   display: flex;
+   flex-direction: column;
+}
+.form2{
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+    border-radius: 5%;
+    width: 50%;
+    height: 70%;
+    margin: auto;
+    /* border: 1px solid red; */
+    margin-top: 2%;
+   text-align: center;
+   padding: 9%;
+
+   display: flex;
+   flex-direction: column;
+}
+.form-controll2{
+      width:100%;
+    height:40%;
+    margin: auto;
+    margin-top: 2%;
+
+}
+
+.spinner{
+    width: 20%;
+    margin: auto;
+    margin-top: 30%;
+}
+.form-controll{
+    width:100%;
+    height:40%;
+    margin: auto;
+    margin-top: 2%;
+
+}
+.input{
+    margin-top: 5%;
+}
+
+@media screen and (min-width: 360px) and (max-width:576px){
+    .form{
+        box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+        border-radius: 5%;
+        width: 100vw;
+        height: 70vh;
+        display: flex;
+        flex-direction: column;
+        /* border: 1px solid red; */
+        margin-top: 10%;
+       text-align: center;
+       padding: 5%;
+
+    }
+    .form-controll{
+        width:100%;
+        height:60%;
+        margin: auto;
+        margin-top: 5%;
+        /* border: 1px solid green; */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+  
+}
+@media screen and (min-width: 576px) and (max-width:768px){
+    .form{
+        box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+        border-radius: 5%;
+        width: 70%;
+        height: 50vh;
+        margin: auto;
+        /* border: 1px solid red; */
+        margin-top: 2%;
+       text-align: center;
+       padding: 5%;
+       display: flex;
+       flex-direction: column;
+    }
+    
+}
+@media screen and (min-width: 768px) and (max-width:992px){
+    .form{
+        box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+        border-radius: 5%;
+        width: 60%;
+        height: 50vh;
+        margin: auto;
+        /* border: 1px solid red; */
+        margin-top: 2%;
+       text-align: center;
+       padding: 5%;
+       display: flex;
+       flex-direction: column;
+    }
+    .form-controll{
+        width:100%;
+        height:60%;
+        margin: auto;
+        margin-top: 5%;
+        /* border: 1px solid green; */
+    }
+    .form>button{
+        margin-top: 2%;
+   }
+}

@@ -1,0 +1,13 @@
+.productList {
+    width: 82%;
+    margin-left: 18%;
+    display: grid;
+    grid-template-columns: repeat(5, 17%);
+    /* column-gap: 40px; */
+    justify-content: space-evenly;
+    /* padding-left: 30px; */
+    /* padding-right: 0%; */
+    border: 1px solid red;
+    /* position: absolute;
+    top: 16%; */
+}
