@@ -1,6 +1,6 @@
 import './App.css';
 
-import Navbar from './components/Navbar';
+import Navbar from './Components/Navbar';
 import AllRoutes from './pages/AllRoutes';
 
 import ProductList from './Components/ProductList';
