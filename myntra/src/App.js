@@ -1,9 +1,11 @@
 import './App.css';
 
-import Navbar from './components/Navbar';
+
 import AllRoutes from './pages/AllRoutes';
 
 import ProductList from './Components/ProductList';
+import Navbar from './Components/Navbar';
+// import Home from './VPages/Home';
 
 
 function App() {
@@ -13,6 +15,7 @@ function App() {
       <Navbar/>
       <AllRoutes/>
       <ProductList />
+      {/* <Home/> */}
 
     </div>
   );
