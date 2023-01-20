@@ -8,38 +8,93 @@ import { useEffect } from 'react';
 
 const Sidebar = () => {
 
-    const [searchParams,setSearhParams] = useSearchParams()
+    const [searchParams,setSearhParams] = useSearchParams();
+    const initialState = searchParams.getAll("color")
 
-    console.log(searchParams.getAll("category"))
+    console.log(searchParams.getAll("color"))
 
-    const [category,setCategory] = useState([]);
-    console.log(category)
+    const [color,setColor] = useState(initialState || []);
+    console.log(color)
 const handleFilter = (e) => {
-    let newCat = [...category];
+    let newCat = [...color];
 
     if(newCat.includes(e.target.value)){
         newCat.splice(newCat.indexOf(e.target.value),1)
     }else{
         newCat.push(e.target.value)
     }
-    setCategory(newCat)
+    setColor(newCat)
 }
 
 useEffect(() => {
     const params = {
-        category
+        color
     }
     setSearhParams(params)
 
-},[category])
+},[color])
 
 
   return (
+    <div className={styles.main}>
+        <div className={styles.fill}>
+            Filter
+        </div>
     <div className={styles.side} >
-        <input type="checkbox" value="black" onChange={handleFilter} />
+        <div>  
+        <input type="checkbox" value="black" onChange={handleFilter} checked={color.includes("black")} />
         <label>Black</label>
-        <input type="checkbox" value="blue" onChange={handleFilter} />
+        </div>
+        <div>  
+        <input type="checkbox" value="white" onChange={handleFilter} checked={color.includes("white")} />
+        <label>White</label>
+        </div>
+        <div>  
+        <input type="checkbox" value="pink" onChange={handleFilter} checked={color.includes("pink")} />
+        <label>Pink</label>
+        </div>
+        <div>  
+        <input type="checkbox" value="red" onChange={handleFilter} checked={color.includes("red")} />
+        <label>Red</label>
+        </div>
+        <div>  
+        <input type="checkbox" value="blue" onChange={handleFilter} checked={color.includes("blue")} />
         <label>Blue</label>
+        </div>
+        <div>  
+        <input type="checkbox" value="green" onChange={handleFilter} checked={color.includes("green")}  />
+        <label>Green</label>
+        </div>
+
+       
+    </div>
+    <div className={styles.brand}>
+        <div>  
+        <input type="checkbox" value="black" onChange={handleFilter} checked={color.includes("black")} />
+        <label>Black</label>
+        </div>
+        <div>  
+        <input type="checkbox" value="white" onChange={handleFilter} checked={color.includes("white")} />
+        <label>White</label>
+        </div>
+        <div>  
+        <input type="checkbox" value="pink" onChange={handleFilter} checked={color.includes("pink")} />
+        <label>Pink</label>
+        </div>
+        <div>  
+        <input type="checkbox" value="red" onChange={handleFilter} checked={color.includes("red")} />
+        <label>Red</label>
+        </div>
+        <div>  
+        <input type="checkbox" value="blue" onChange={handleFilter} checked={color.includes("blue")} />
+        <label>Blue</label>
+        </div>
+        <div>  
+        <input type="checkbox" value="green" onChange={handleFilter} checked={color.includes("green")}  />
+        <label>Green</label>
+        </div>
+        </div>
+   
     </div>
   )
 }

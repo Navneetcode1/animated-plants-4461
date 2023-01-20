@@ -4,9 +4,10 @@
     height: 50px;
 }
 
+
 .addOns {
     width: 50%;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     display: flex;
     justify-content: space-between;
    
@@ -28,3 +29,4 @@
 .drop select{
     width: 200px;
 }
+
