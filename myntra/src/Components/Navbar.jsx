@@ -80,7 +80,7 @@ const Navbar = () => {
               <ModalContent>
                 <ModalHeader>
                    
-                   <Box fontSize={"md"} gap="10px"  m={"auto"}   display={"flex"} justifyContent={"space-evenly"} gap={10}  bg={"white"}>
+                   <Box fontSize={"md"} gap="10px"  m={"auto"}   display={"flex"} justifyContent={"space-evenly"}  bg={"white"}>
                     <Box color={"gold"} >
                       <Text color={"red"} fontSize={"md"}>Top-Wear</Text>
                       <Link to="/mens">
