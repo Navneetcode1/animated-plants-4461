@@ -6,19 +6,21 @@ import {
   Stack,
   SimpleGrid,
   Text,
+  Image,
   Link,
   VisuallyHidden,
   chakra,
   useColorModeValue,
+  Spacer,
 } from '@chakra-ui/react';
-import { FaTwitter, FaYoutube, FaInstagram } from 'react-icons/fa';
+import { FaTwitter, FaYoutube, FaInstagram, FaFacebook } from 'react-icons/fa';
 
 // import AppStoreBadge from '@/components/AppStoreBadge';
 // import PlayStoreBadge from '@/components/PlayStoreBadge';
 
 const ListHeader = ({ children }) => {
     return (
-      <Text fontWeight={'bold'} fontSize={'12px'} color={"black"}>
+      <Text fontWeight={'750'} fontFamily={"sans-serif"} fontSize={'13px'} color={"black"}>
         {children}
       </Text>
     );
@@ -56,7 +58,8 @@ function Footer(){
     return (
         <Box
       bg={useColorModeValue('gray.50', 'gray.900')}
-      color={useColorModeValue('gray.600', 'gray')}>
+      color={useColorModeValue('gray.600', 'gray')}
+      mt={"100px"}>
       <Container as={Stack} maxW={'6xl'} py={10}>
         <SimpleGrid columns={{ base: 1, sm: 2, md: 4 }} spacing={8}>
           <Stack align={'flex-start'}>
@@ -67,7 +70,7 @@ function Footer(){
             <Link href={'#'}>Home & Living</Link>
             <Link href={'#'}>Beauty</Link>
             <Link href={'#'}>Gift Cards</Link>
-            <Link href={'#'}>Myntra Insider</Link>
+            <Link href={'#'}>Fashion-Mantra Insider</Link>
             
           </Stack>
 
@@ -95,10 +98,13 @@ function Footer(){
           </Stack>
 
           <Stack align={'flex-start'}>
-            <ListHeader>EXPERIENCE MYNTRA APP ON MOBILE</ListHeader>
+            <ListHeader>GET FASHION-MANTRA APP ON MOBILE</ListHeader>
+            <Spacer/>
+            <Image width={"70%"} src="https://seeklogo.com/images/A/app-store-google-play-logo-4A2747BF5E-seeklogo.com.png"/>
             {/* <AppStoreBadge />
             <PlayStoreBadge /> */}
-             <ListHeader>KEEP IN TOUCH</ListHeader>
+            <Spacer/>
+             <ListHeader >KEEP IN TOUCH</ListHeader>
              <Stack direction={'row'} spacing={6}>
             <SocialButton label={'Twitter'} href={'#'}>
               <FaTwitter />
@@ -108,6 +114,9 @@ function Footer(){
             </SocialButton>
             <SocialButton label={'Instagram'} href={'#'}>
               <FaInstagram />
+            </SocialButton>
+            <SocialButton label={'Instagram'} href={'#'}>
+              <FaFacebook />
             </SocialButton>
           </Stack>
           </Stack>
@@ -124,10 +133,9 @@ function Footer(){
           py={4}
           direction={{ base: 'column', md: 'row' }}
           spacing={4}
-          justify={{ md: 'space-between' }}
-          align={{ md: 'center' }}>
-          <Text>© 2023 www.myntra.com. All rights reserved.</Text>
-          
+          justify={"end"}
+          align={"end"}>
+          <Text>© 2023 www.fashionmantra.com. All rights reserved.</Text>
         </Container>
       </Box>
     </Box>
