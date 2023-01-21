@@ -1,9 +1,19 @@
-import { Stack, Image, Box, Card, Button, Flex, Tabs, TabList, Tab, TabPanel, TabPanels, } from '@chakra-ui/react'
-import React from 'react'
+import { Stack, Image, Box, Card, Button, Flex, Tabs, TabList, Tab, TabPanel, TabPanels, Input, } from '@chakra-ui/react'
+import React, { useState } from 'react'
+import { useDispatch } from 'react-redux'
+import { addmenamount, reducemenamount } from '../Redux/Auth/Admin/AdminProduct/AddMenData/menamount'
 import "./AdminPage.css"
-import QInput from './Input'
+
 const ProductDetails = (props) => {
-  const { id, brand, qty, images, count, categories, color, gender, price } = props
+  const { id, brand, qty, images, count, categories, color, gender, price, deleteaction, getdata, addamount, reduceamount } = props
+  const dispatch = useDispatch()
+  const handleDelete = () => {
+    dispatch(deleteaction(id))
+      .then(res => dispatch(getdata()))
+  }
+  const [value, setValue] = useState()
+
+
   return (<Card className='card'>
     <Image src={images.image2} />
     <h3>{brand}</h3>
@@ -20,14 +30,23 @@ const ProductDetails = (props) => {
         </TabList>
         <TabPanels>
           <TabPanel>
-            <QInput icon="+" />
+            <form onSubmit={(e) => addamount(e, value)}>
+              <Input type="number" placeholder='Enter the amount' onChange={(e) => setValue(e.target.value)} />
+              <Button type="submit" >+</Button>
+            </form>
+   
           </TabPanel>
           <TabPanel>
-            <QInput icon="-" />
+            <form onSubmit={(e) => reduceamount(e, value)}>
+              <Input type="number" placeholder='Enter the amount' onChange={(e) => setValue(e.target.value)} />
+              <Button type="submit" >-</Button>
+            </form>
+
           </TabPanel>
         </TabPanels>
       </Tabs>
     </Flex>
+    <Button onClick={() => handleDelete()}>Delete</Button>
   </Card>
   )
 }

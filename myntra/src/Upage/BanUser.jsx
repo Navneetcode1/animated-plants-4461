@@ -2,8 +2,9 @@ import { Button, FormControl, FormLabel, Heading, Input, Stack } from '@chakra-u
 import React from 'react'
 import { useState } from 'react'
 import { useDispatch } from 'react-redux'
-import banuseraction from './banuseraction'
-import getbanuserdata from './getbanuseraction'
+import { banuser, getbanuserdata } from '../Redux/Auth/Admin/userauthaction'
+
+
 
 const BannUser = () => {
   const init={
@@ -17,7 +18,7 @@ const BannUser = () => {
   }
   const handleSubmit = (e,data)=>{
      e.preventDefault()
-     dispatch(banuseraction(data))
+     dispatch(banuser(data))
      .then(res=>dispatch(getbanuserdata()))
      setData(init)
   }
