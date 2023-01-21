@@ -15,9 +15,6 @@ import {
 } from '@chakra-ui/react';
 import { FaTwitter, FaYoutube, FaInstagram, FaFacebook } from 'react-icons/fa';
 
-// import AppStoreBadge from '@/components/AppStoreBadge';
-// import PlayStoreBadge from '@/components/PlayStoreBadge';
-
 const ListHeader = ({ children }) => {
     return (
       <Text fontWeight={'750'} fontFamily={"sans-serif"} fontSize={'13px'} color={"black"}>
@@ -101,8 +98,6 @@ function Footer(){
             <ListHeader>GET FASHION-MANTRA APP ON MOBILE</ListHeader>
             <Spacer/>
             <Image width={"70%"} src="https://seeklogo.com/images/A/app-store-google-play-logo-4A2747BF5E-seeklogo.com.png"/>
-            {/* <AppStoreBadge />
-            <PlayStoreBadge /> */}
             <Spacer/>
              <ListHeader >KEEP IN TOUCH</ListHeader>
              <Stack direction={'row'} spacing={6}>
