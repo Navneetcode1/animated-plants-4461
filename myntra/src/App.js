@@ -14,7 +14,7 @@ function App() {
     <div className="App">
       <Navbar />
       <AllRoutes />
-      <ProductList />
+      {/* <ProductList /> */}
     </div>
   );
 }
