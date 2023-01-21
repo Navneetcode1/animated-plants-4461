@@ -8,9 +8,16 @@ import "./App.css";
 import AllRoutes from './pages/AllRoutes';
 // import ProductList from './Components/ProductList';\
 import ProductList from "./Components/CompnentsT/ProductList";
+
+
+
+// import ProductList from './Components/ProductList';
+import Navbar from './Components/Navbar';
+
 import ProductDetail from "./PagesT/ProductDetail";
 import Filters from "./Components/CompnentsT/Filters";
 import Navbar2 from "./Components/Navbar2";
+
 
 import Navbar from './Components/Navbar';
 
@@ -28,3 +35,4 @@ function App() {
 }
 
 export default App;
+

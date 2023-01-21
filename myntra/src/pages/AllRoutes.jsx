@@ -6,9 +6,13 @@ import { CartPayment } from '../PagesA/CartPayment'
 import FinalPayment from '../PagesA/FinalPayment'
 import Home from './Home'
 import Login from './Login'
-import Mens from './Mens';
+
+import Mens from './Mens'
+
+
 import ProductDetail from '../PagesT/ProductDetail'
 import SinglePro from '../Components/CompnentsT/SinglePro'
+
 
 const AllRoutes = () => {
     return (
@@ -17,10 +21,14 @@ const AllRoutes = () => {
             <Route path='/login' element={<Login />} />
             <Route path='/checkout' element={<CartPayment />} />
 
+            <Route path='/mens' element={<Mens />} />
+            
+
             <Route path='/checkout/address' element={<CartAddress />} />
             <Route path='/checkout/address/payment' element={<FinalPayment />} />
             <Route path='/mens' element={<Mens />} />
             <Route path='/men/:id' element={<SinglePro />} />
+
         </Routes>
     )
 }
