@@ -20,15 +20,12 @@ const Addimages = () => {
          setImg({...img,[name]:value})
     }
     const imgarr = JSON.parse(localStorage.getItem("imgarr"))||[]
-    const handleSubmit =(e,img)=>{
-         e.preventDefault();
+    const handleSubmit =(img)=>{
          imgarr.push(img)
          localStorage.setItem("imgarr",JSON.stringify(imgarr))
          setImg(init)
     }
-  return (
-    <form onSubmit={(e)=>handleSubmit(e,img)}>
-    <FormControl>
+  return (<div>
       <FormLabel>Enter Image1</FormLabel>
       <Input onChange={(e)=>handlChange(e)} name="image1" type="text" value={img.image1} />
       <FormLabel>Enter Image2</FormLabel>
@@ -39,9 +36,9 @@ const Addimages = () => {
       <Input onChange={(e)=>handlChange(e)} name="image4" type="text" value={img.image4} />
       <FormLabel>Enter Image5</FormLabel>
       <Input onChange={(e)=>handlChange(e)} name="image5" type="text" value={img.image5}/>
-  </FormControl>
-  <Button type="submit">Images</Button>
-</form>
+
+  <Button onClick={handleSubmit} type="submit">Images</Button>
+  </div>
   )
 }
 

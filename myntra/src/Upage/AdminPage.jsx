@@ -1,11 +1,9 @@
 import { Box, Flex, Heading, Input, Link, Stack, Tab, TabList, TabPanel, TabPanels, Tabs, } from "@chakra-ui/react"
-
-import AddProd from "./Tab1"
-import BannUser from "./Tab2"
-import RemoveBann from "./Tab3"
+import BannUser from "./BanUser"
 import "./AdminPage.css"
 import Mendata from "./Mendata"
 import Womendata from "./Womendata"
+import RemoveBann from "./RemoveBanUser"
 
 const AdminPage = () => {
 
@@ -20,15 +18,12 @@ const AdminPage = () => {
         </Stack>
         <Tabs variant='enclosed' width="50%" margin="auto" border="1px solid red" align="center">
             <TabList>
-                <Tab>Add Product</Tab>
+        
                 <Tab>Bann User</Tab>
                 <Tab>Remove Bann of a User</Tab>
 
-            </TabList>                                               
+            </TabList>
             <TabPanels>
-                <TabPanel>
-                    <AddProd />
-                </TabPanel>
                 <TabPanel>
                     <BannUser />
                 </TabPanel>

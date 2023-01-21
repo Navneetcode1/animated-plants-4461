@@ -2,9 +2,9 @@ import { Button, FormControl, FormLabel, Heading, Input, Stack } from '@chakra-u
 import React, { useState } from 'react'
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import getbanuserdata from './getbanuseraction'
-import removebanuseraction from './removebanuseraction'
+
 import { useToast } from '@chakra-ui/react'
+import { getbanuserdata, removeban } from '../Redux/Auth/Admin/userauthaction'
 
 const RemoveBann = () => {
   const init = {
@@ -12,7 +12,7 @@ const RemoveBann = () => {
   }
   const [data,setData] = useState(init)
   const dispatch = useDispatch()
-  const banneddata = useSelector(store=>store.getbanreducer.data)
+  const banneddata = useSelector(store=>store.getbannreducer.banneduserlist)
   const toast = useToast()
   console.log(banneddata)
   const handleChange = (e)=>{
@@ -27,7 +27,7 @@ const RemoveBann = () => {
      if(newdata.length>0){
     let id = newdata[0].id
     console.log(id)
-      dispatch(removebanuseraction(id))
+      dispatch(removeban(id))
       .then(res=>dispatch(getbanuserdata()))
       toast({
         title: 'Account reinstalled successfully',

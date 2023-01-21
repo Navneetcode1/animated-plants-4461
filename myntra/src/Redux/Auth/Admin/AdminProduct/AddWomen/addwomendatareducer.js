@@ -10,6 +10,7 @@ const init ={
     data:"",
 }
 const addwomenprodreducer = (state=init,{type,payload}) => {
+
       switch (type) {
         case ADDWOMENPRODREQUST:
           return {
