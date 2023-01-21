@@ -1,26 +1,30 @@
 .card {
     /* width: 25%; */
     height: 318px;
-    border: 1px solid red;
+    /* border: 1px solid red; */
+    border-radius: 5px;
     line-height: 10px;  
+    margin-bottom: 50px;
     position: relative;
-
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
+
 
 .card img{
     width: 100%;
-    border: 1px solid green;
+    overflow: hidden;
+    /* border: 1px solid green; */
 }
 
 .card h5{
     margin-bottom: 4%;
-    border: 1px solid red;
+    /* border: 1px solid red; */
 }
 .card p{
     margin-top: 0%;
     font-size: 10px;
     color: gray;
-    border: 1px solid black;
+    /* border: 1px solid black; */
 }
 
 .offPrice {
@@ -28,16 +32,17 @@
     font-size: 10px;
     font-weight:300;
     text-decoration-line:line-through;
-    border: 1px solid blue;
+    /* border: 1px solid blue; */
 }
 
 .brand {
     position: absolute;
-    top: 65%;
+    top: 72%;
+
 }
 .price {
     position: absolute;
-    top: 80%;
+    top: 85%;
 }
 .wishlist {
     position: absolute;
@@ -47,9 +52,21 @@
     background-color: white;
     display: none;
     transition: 0.5s ease-in-out;
-    align-content: center;
+   
 }
 .card:hover  .wishlist {
     display: block;
-
+   
+}
+.wishlist button {
+    position: absolute;
+    top: 35%;
+    left: 15%;
+    border: 1px solid black;
+    height: 30px;
+    width: 70%;
+}
+.card:hover {
+    scale: 1.1;
+    transition: 0.5s ease-in-out;
 }

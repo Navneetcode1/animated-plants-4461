@@ -1,6 +1,44 @@
-.side {
+
+.main {
     width: 18%;
     height: 100vh;
     position: fixed;
-    border: 1px solid red;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-right: 1px solid gray;
+}
+/* .side {
+    
+    border: 1px solid red; 
+     display: flex;
+    flex-direction: column;
+    align-items: center;
+} */
+.side {
+    border-top: 1px solid gray
+}
+
+.side div{
+    /* border: 1px solid red; */
+    width: 30%;
+    display: flex;
+    /* justify-content: space-a; */
+}
+/* .brand {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+} */
+.brand div{
+    /* border: 1px solid red; */
+    width: 30%;
+    display: flex;
+    /* justify-content: space-a; */
+}
+
+.fill {
+    /* border: 1px solid red; */
+    align-content: center;
+    font-size: 1.5rem;
 }

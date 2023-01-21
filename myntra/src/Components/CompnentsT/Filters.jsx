@@ -4,8 +4,8 @@ import styles from './Filters.module.css'
 const Filters = () => {
   return (
     <div className={styles.filterMain}>
-        <div>
-        <h4>FILTERS</h4>
+        <div className={styles.fill}>
+        {/* <h4>FILTERS</h4> */}
         </div>
         <div className={styles.addOns}>
             <button>Add Ons</button>
