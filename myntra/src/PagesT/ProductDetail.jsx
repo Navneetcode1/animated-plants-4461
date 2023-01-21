@@ -1,30 +1,63 @@
+import axios from 'axios'
 import React, { useEffect } from 'react'
+import { useState } from 'react'
 import styles from './ProductDetail.module.css'
-const ProductDetail = () => {
+const ProductDetail = ({pro}) => {
 
+    const [count,setCount] = useState(2)
+console.log(count)
+console.log(pro?.images?.image1)
+
+   
 
     useEffect(() => {
+        axios.get("https://cheerful-trunks-duck.cyclic.app/cart")
+        .then((res) => {
+            setCount(res.data.length)
+            //  
+        })
+        .catch((err) => {
+            console.log(err)
+        })
         
     })
-    const handleCart =() => {
-        
+    const handleCart =(e) => {
+        e.preventDefault();
+
+        axios.post('https://cheerful-trunks-duck.cyclic.app/cart',{pro})
+        .then((res) => {
+            console.log(res)
+        })
+        .catch((err) => {
+            console.log(err)
+        })
     }
+    
 
   return (
    <>
     <div className={styles.main}>
         <div className={styles.images}>
-    <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/14350098/2021/6/18/8e12d936-e770-48d3-a285-b72c4c1c74391623996957697-Mast--Harbour-Men-Tshirts-3781623996957278-4.jpg" alt="" />
-    <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/14350098/2021/6/18/8e12d936-e770-48d3-a285-b72c4c1c74391623996957697-Mast--Harbour-Men-Tshirts-3781623996957278-4.jpg" alt="" />
-    <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/14350098/2021/6/18/8e12d936-e770-48d3-a285-b72c4c1c74391623996957697-Mast--Harbour-Men-Tshirts-3781623996957278-4.jpg" alt="" />
-    <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/14350098/2021/6/18/8e12d936-e770-48d3-a285-b72c4c1c74391623996957697-Mast--Harbour-Men-Tshirts-3781623996957278-4.jpg" alt="" />
-        </div>
+            <div>
+            <img src={pro?.images?.image1} alt="" />  
+            </div>
+            <div>
+            <img src={pro?.images?.image2} alt="" />
+            </div>
+            <div>
+            <img src={pro?.images?.image3} alt="" />
+            </div>
+            <div>
+            <img src={pro?.images?.image4} alt="" />
+            </div>
+    
+          </div>
         <div className={styles.details}>
-            <h3 >Brand</h3>
-            <p>Name</p>
-            <p>Rating and review</p>
+            <h3 >{pro.brand}</h3>
+            <p>{pro.title}</p>
+            <p>{pro.rating} <span>{pro.count}</span> </p>
             <div className={styles.divider}></div>
-            <h3>Price</h3>
+            <h3>₹{pro.price} <span>{pro.off_price} {pro.discount}</span></h3>
 
             <h5>Select Size</h5>
             <div className={styles.buttons}>
@@ -37,8 +70,13 @@ const ProductDetail = () => {
                 <button onClick={handleCart}>ADD TO BAG</button>
                 <button>Wishlist</button>
             </div>
-         
+            <div>
+            <p>
+                {pro.description}
+            </p>
         </div>
+        </div>
+        
     </div>
    </>
   )
