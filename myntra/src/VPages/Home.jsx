@@ -1,7 +1,24 @@
+
+import Footer from './Footer';
+import Carousel from './Carousel';
+import Main from './Main';
+
+
+
 function Home(){
-    return <div>
-        Home
-    </div>
+       
+  
+
+    return(
+        <>
+          <Carousel/>
+          <Main/>
+          <Footer/>  
+        </>
+    ) 
 }
 
 export default Home;
+
+
+	

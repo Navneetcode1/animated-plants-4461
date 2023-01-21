@@ -1,13 +1,20 @@
 import React from 'react';
 import styles from './ProductCard.module.css';
+import { Link } from 'react-router-dom';
 
 export const ProductCard = ({item}) => {
 
-    // console.log(item.images.image1)
+    // console.log(item.images)
+    // const one = item.images;
+
+    // console.log(one)
     // console.log(item.id)
   return (
+    <Link  to={`men/${item.id}`}>
     <div className={styles.card}  >
+      
         <img src={item.images.image1} alt="" />
+        
         <div className={styles.brand}>
         <h5>{item.brand}</h5>
         <p>{item.title}</p>
@@ -19,6 +26,8 @@ export const ProductCard = ({item}) => {
         <div className={styles.wishlist}>
           <button>Whishlist</button>
         </div>
+        
     </div>
+    </Link>
   )
 }

@@ -409,6 +409,7 @@ td{
     /* border: 1px solid green; */
 }
 
+
 @media screen and (min-width:360px) and (max-width:576px) {
     .twosections{
         display: block;
