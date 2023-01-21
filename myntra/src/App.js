@@ -19,9 +19,10 @@ function App() {
     <div className="App">
       <Navbar2 />
       <AllRoutes />
+
   
       <ProductList />
-      {/* <ProductDetail />  */}
+   
     </div>
   );
 }
