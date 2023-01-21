@@ -47,4 +47,7 @@ const Navbar2 = ({text}) => {
   )
 }
 
+
 export default Navbar2
+
+

@@ -5,6 +5,8 @@ import { getProduct } from '../../Redux/Products/actions';
 import { ProductCard } from './ProductCard';
 import styles from './Product.module.css';
 import Sidebar from './Sidebar';
+import { useLocation, useSearchParams } from 'react-router-dom';
+import Filters from './Filters';
 
 const ProductList = () => {
 
@@ -12,11 +14,20 @@ const ProductList = () => {
     const products = useSelector((store) => store.productDatareducer.products);
     // console.log(products)
     const isLoading = useSelector((store) => store.productDatareducer.isLoading)
+    const location = useLocation();
+    const [searchParams] = useSearchParams()
+
 
     useEffect(() => {
+
+        let paramObj = {
+            params: {
+                color: searchParams.getAll('color')
+            }
+        }
         // dispatch()
-        dispatch(getProduct)
-    },[])
+        dispatch(getProduct(paramObj))
+    },[location.search])
 
     if(isLoading) {
         return <h1>...Loading</h1>
@@ -24,6 +35,7 @@ const ProductList = () => {
 
   return (
     <>
+        <Filters />
     <Sidebar />
     <div className={styles.productList}>
         {

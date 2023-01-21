@@ -1,16 +1,26 @@
 import { Text,Box,useDisclosure,Modal,ModalOverlay,ModalContent,ModalHeader,ModalCloseButton,ModalBody,ModalFooter, Link, Flex, Input } from '@chakra-ui/react'
+
 import React,{useState}from 'react'
+
+import React from 'react'
+
 import { FaUser, FaRegHeart, FaShoppingBag } from "react-icons/fa"
 import { Stack,InputLeftElement,InputGroup } from '@chakra-ui/react'
 
 // import { Input } from '@chakra-ui/react'
 
+
 // const data=
+
+
 
 const Navbar = () => {
     const { isOpen, onOpen, onClose } = useDisclosure()
     const [size, setSize] = React.useState('md')
+
     const [value,setValue]=useState("")
+=======
+
   
     const handleSizeClick = (newSize) => {
       setSize(newSize)
@@ -20,6 +30,7 @@ const Navbar = () => {
     const sizes = ['Mens ▼','Womens ▼', 'Kids ▼'];
     const shadow="box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;"
     const sizes1="6md";
+
 
 
 const handleChange=(event)=>{
@@ -32,6 +43,7 @@ const handleChange=(event)=>{
 const handleSearch=()=>{
 
 }
+
 
 
     return (
@@ -86,8 +98,12 @@ const handleSearch=()=>{
       pointerEvents='none'
     //   children={<PhoneIcon color='gray.300' />}
     />
+
     <button onClick={()=>handleSearch(value)}>🔎</button>
     <Input type='search' value={value} onChange={handleChange} placeholder=' Search for products' />
+
+    <Input type='search' placeholder=' Search for products' />
+
   </InputGroup>
   </Stack>
             </Flex>
@@ -219,4 +235,7 @@ const handleSearch=()=>{
 
     
 
+
 export default Navbar
+
+
