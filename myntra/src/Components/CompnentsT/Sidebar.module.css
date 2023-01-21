@@ -16,7 +16,8 @@
     align-items: center;
 } */
 .side {
-    border-top: 1px solid gray
+    border-top: 1px solid gray;
+    font-size: 12px;
 }
 
 .side div{
@@ -30,6 +31,11 @@
     flex-direction: column;
     align-items: center;
 } */
+
+.brand {
+    margin-top: 100px;
+    font-size: 12px;
+}
 .brand div{
     /* border: 1px solid red; */
     width: 30%;
