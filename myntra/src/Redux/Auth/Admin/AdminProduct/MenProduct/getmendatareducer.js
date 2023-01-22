@@ -7,6 +7,7 @@ const init = {
     menprod:[]
 }
 const menreducer = (state=init,{type,payload}) => {
+    console.log(payload)
     switch(type){
         case GETMENDATALOADING:
             return {

@@ -20,7 +20,18 @@ export const getProduct = (param) => (dispatch) => {
         dispatch(getProductSuccessAction(res.data))
     })
     .catch((err) => {
-        dispatch(getProductFailureAction())
+      console.log(err)
+      dispatch(getProductFailureAction())
     })
 }
 
+export const getWomenPro = (param) => (dispatch) => {
+    dispatch(getProductRequestAction());
+    axios.get("https://cheerful-trunks-duck.cyclic.app/women",param).then((res) => {
+        dispatch(getProductSuccessAction(res.data))
+    })
+    .catch((err) => {
+      console.log(err)
+      dispatch(getProductFailureAction())
+    })
+}

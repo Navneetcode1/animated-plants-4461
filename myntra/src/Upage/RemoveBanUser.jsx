@@ -1,33 +1,21 @@
-import { Button, FormControl, FormLabel, Heading, Input, Stack } from '@chakra-ui/react'
+import { Button, Flex, FormControl, FormLabel, Heading, Input, Stack } from '@chakra-ui/react'
 import React, { useState } from 'react'
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import getbanuserdata from './getbanuseraction'
-import removebanuseraction from './removebanuseraction'
+import {ImCross} from "react-icons/im"
 import { useToast } from '@chakra-ui/react'
+import { getbanuserdata, removeban } from '../Redux/Auth/Admin/userauthaction'
 
 const RemoveBann = () => {
-  const init = {
-     email :"",
-  }
-  const [data,setData] = useState(init)
   const dispatch = useDispatch()
-  const banneddata = useSelector(store=>store.getbanreducer.data)
+  const banneddata = useSelector(store=>store.getbannreducer.banneduserlist)
   const toast = useToast()
-  console.log(banneddata)
-  const handleChange = (e)=>{
-      const {name,value} = e.target
-      setData({...data,[name]:value})
-  }
-  const handleSubmit = (e,data)=>{
+
+
+  const handleSubmit = (e,id)=>{
      e.preventDefault()
-     console.log(data.email)
-    let newdata =  banneddata.filter(ele=>ele.email===data.email)
-    console.log(newdata)
-     if(newdata.length>0){
-    let id = newdata[0].id
-    console.log(id)
-      dispatch(removebanuseraction(id))
+     console.log(id)
+      dispatch(removeban(id))
       .then(res=>dispatch(getbanuserdata()))
       toast({
         title: 'Account reinstalled successfully',
@@ -36,7 +24,7 @@ const RemoveBann = () => {
         duration: 9000,
         isClosable: true,
       })
-     }
+     
     
   }
   useEffect(()=>{
@@ -45,13 +33,19 @@ const RemoveBann = () => {
 
   return (
     <Stack>
-    <form onSubmit={(e)=>handleSubmit(e,data)}>
+      {
+        banneddata && banneddata.map(ele=><Flex justifyContent="space-between" alignItems="center" key={ele.id}>
+          <h3>{ele.email}</h3>
+          <Button onClick={(e)=>handleSubmit(e,ele.id)}>{ImCross}</Button>
+        </Flex>)
+      }
+    {/* <form onSubmit={(e)=>handleSubmit(e,data)}>
         <FormControl>
         <FormLabel>Enter User Email</FormLabel>
             <Input type="email" onChange={(e)=>handleChange(e)} value={data.email} name="email"/>
         </FormControl>
         <Button type="submit">Enter</Button>
-    </form>
+    </form> */}
 </Stack>
   )
 }
