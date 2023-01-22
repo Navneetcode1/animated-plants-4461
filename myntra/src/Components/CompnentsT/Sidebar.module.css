@@ -1,13 +1,12 @@
 
 .main {
     width: 18%;
-    height: 100vh;
+    height: auto;
     position: fixed;
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-top: 1px solid gray;
-    border-right: 1px solid gray;
+    border: 1px solid gray;
 }
 /* .side {
     
@@ -49,4 +48,16 @@
     align-content: center;
     font-size: 1.2rem;
 
+}
+
+@media screen and (min-width: 336px) and (max-width: 576px) {
+    .main {
+       position: absolute;
+    }
+}
+
+@media screen and (min-width: 577px) and (max-width: 876px) {
+    .main {
+       width: 10%;
+    }
 }
