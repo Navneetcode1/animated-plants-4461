@@ -1,6 +1,6 @@
 
 
-import { Button, ButtonGroup, Flex, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, useDisclosure } from '@chakra-ui/react'
+import { Button, ButtonGroup, Flex, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, SimpleGrid, Stack, useDisclosure } from '@chakra-ui/react'
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
@@ -31,7 +31,7 @@ const Womendata = () => {
         dispatch(getwomenData())
     }, [])
     return (
-        <div>
+        <Stack className='card' fontSize={["80%","90%","90%","90%","90%"]}>
             <Flex justifyContent="space-around" alignItems="center">
                 <h3>ProductCount : {data2 && data2.length}</h3>
             <Button onClick={onOpen}>Add Product</Button>
@@ -46,12 +46,12 @@ const Womendata = () => {
                 </ModalContent>
             </Modal>
             </Flex>
-            <Flex className="prod-stack" >
+            <SimpleGrid columns={[ 2, 3, 5, 6]} gap={5}>
                 {
                     data2 && data2.map(ele => <ProductDetails key={ele.id + Math.random()} {...ele} deletedata={deletewomenaction} getdata={getwomenData} addamount={addamount} reduceamount={reduceamount} />)
                 }
-            </Flex>
-        </div>
+            </SimpleGrid>
+        </Stack >
     )
 }
 

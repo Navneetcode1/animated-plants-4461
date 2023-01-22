@@ -14,23 +14,23 @@ const ProductDetails = (props) => {
   const [value, setValue] = useState()
 
 
-  return (<Card className='card'>
+  return (<Stack className='card' fontSize={["80%","90%","90%","90%","90%"]} >
     <Image src={images.image2} />
     <h3>{brand}</h3>
-    {count < 50 ? <p className='countp'>{count}: stock is less</p> : count}
+    {count < 50 ? <p className='countp'>{count}: stock is less</p> : <p>{count}</p>}
     <p>{categories}</p>
     <p>{color}</p>
     <p>{gender}</p>
     <p>{price}</p>
-    <Flex className='qty'>
+    <Flex className='qty' width="100%" >
       <Tabs>
         <TabList >
-          <Tab className='tab'>Qty Increase</Tab>
-          <Tab className='tab'>Qty Decrease</Tab>
+          <Tab fontSize={["80%","80%","80%","80%","80%"]} className='tab'>Qty Increase</Tab>
+          <Tab  fontSize={["80%","80%","80%","80%","80%"]} className='tab'>Qty Decrease</Tab>
         </TabList>
         <TabPanels>
           <TabPanel>
-            <form onSubmit={(e) => addamount(e,id,count, value)}>
+            <form onSubmit={(e) => addamount(e,id,count, value)} >
               <Input type="number" placeholder='Enter the amount' onChange={(e) => setValue(e.target.value)} />
               <Button type="submit" >+</Button>
             </form>
@@ -47,7 +47,7 @@ const ProductDetails = (props) => {
       </Tabs>
     </Flex>
     <Button onClick={() => handleDelete()}>Delete</Button>
-  </Card>
+  </Stack>
   )
 }
 
