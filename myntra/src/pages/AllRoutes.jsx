@@ -5,7 +5,7 @@ import CartPayment from '../PagesA/CartPayment'
 import Home from './Home'
 import Login from './Login'
 import Mens from './Mens'
-
+import {AdminPage} from "../Upage/AdminPage"
 const AllRoutes = () => {
     return (
         <Routes>
@@ -13,7 +13,7 @@ const AllRoutes = () => {
             <Route path='/login' element={<Login />} />
             <Route path='/checkout' element={<CartPayment />} />
             <Route path='/mens' element={<Mens />} />
-            
+            <Route path="/adminpage" element={<AdminPage/>}/>
         </Routes>
     )
 }

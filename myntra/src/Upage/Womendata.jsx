@@ -10,17 +10,30 @@ import AddProd from './AddProd'
 import addwomenaction from '../Redux/Auth/Admin/AdminProduct/AddWomen/addwomendataaction'
 import { getwomenData } from '../Redux/Auth/Admin/AdminProduct/WomenProd/getwomendataaction'
 import deletewomenaction from '../Redux/Auth/Admin/AdminProduct/AddWomen/deletewomenactio'
-
+import { reducewomenamount } from '../Redux/Auth/Admin/AdminProduct/AddWomen/womenamount'
+import { addwomenamount } from '../Redux/Auth/Admin/AdminProduct/AddWomen/womenamount'
 const Womendata = () => {
 
     const data2 = useSelector((store => store.womenreducer.prod))
     const { isOpen, onOpen, onClose } = useDisclosure()
     const dispatch = useDispatch()
+    const addamount =(e,id,value)=>{
+        e.preventDefault()
+         
+        // dispatch(addwomenamount(value))
+    }
+    const reduceamount =(e,id,value)=>{
+        e.preventDefault()
+        console.log(value,id)
+        // dispatch(reducewomenamount(value))
+    }
     useEffect(() => {
         dispatch(getwomenData())
     }, [])
     return (
         <div>
+            <Flex justifyContent="space-around" alignItems="center">
+                <h3>ProductCount : {data2 && data2.length}</h3>
             <Button onClick={onOpen}>Add Product</Button>
             <Modal isOpen={isOpen} onClose={onClose}>
                 <ModalOverlay />
@@ -32,9 +45,10 @@ const Womendata = () => {
                     </ModalBody>
                 </ModalContent>
             </Modal>
+            </Flex>
             <Flex className="prod-stack" >
                 {
-                    data2 && data2.map(ele => <ProductDetails key={ele.id + Math.random()} {...ele} deletedata={deletewomenaction} getdata={getwomenData}/>)
+                    data2 && data2.map(ele => <ProductDetails key={ele.id + Math.random()} {...ele} deletedata={deletewomenaction} getdata={getwomenData} addamount={addamount} reduceamount={reduceamount} />)
                 }
             </Flex>
         </div>
