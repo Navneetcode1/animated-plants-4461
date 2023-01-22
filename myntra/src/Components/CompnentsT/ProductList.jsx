@@ -7,6 +7,7 @@ import styles from './Product.module.css';
 import Sidebar from './Sidebar';
 import { useLocation, useSearchParams } from 'react-router-dom';
 import Filters from './Filters';
+import Navbar2 from '../Navbar2';
 
 const ProductList = () => {
 
@@ -41,6 +42,7 @@ const ProductList = () => {
 
   return (
     <>
+    <Navbar2 />
         <Filters />
     <Sidebar />
     <div className={styles.productList}>

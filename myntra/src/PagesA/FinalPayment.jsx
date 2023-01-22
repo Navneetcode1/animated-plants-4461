@@ -9,6 +9,19 @@ import { Button, useToast } from "@chakra-ui/react";
 const FinalPayment = () => {
   const toast = useToast();
   const navigate = useNavigate();
+
+  const handleclickhome = () => {
+    localStorage.setItem("cartData", JSON.stringify([]));
+    toast({
+      title: "Order Placed successfully",
+      description: "Delivery estimates within 2 days",
+      status: "success",
+      duration: 6000,
+      isClosable: true,
+    });
+    navigate("/");
+  };
+
   return (
     <>
       <div className={styles.maindiv}>
@@ -101,15 +114,9 @@ const FinalPayment = () => {
                   <div className={styles.subpaybtn}>
                     <div className={styles.subpaybtn}>
                       <Button
-                        onClick={() =>
-                          toast({
-                            title: "Order Placed successfully",
-                            description: "Delivery estimates within 2 days",
-                            status: "success",
-                            duration: 6000,
-                            isClosable: true,
-                          })
-                        }
+                        onClick={() => {
+                          handleclickhome();
+                        }}
                       >
                         Continue
                       </Button>

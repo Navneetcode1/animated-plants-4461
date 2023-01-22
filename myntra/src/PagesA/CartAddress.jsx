@@ -4,6 +4,60 @@ import logoicon from "../pictures/logoicon.png";
 import { Link } from "react-router-dom";
 
 const CartAddress = () => {
+  // const [cartArr, setCartArr] = useState([]);
+  // const [currUser, setCurrUser] = useState("");
+  // // const [totalmrp, setTotalmrp] = useState(0);
+
+  // const userId = JSON.parse(localStorage.getItem("userId")) || "";
+  // // console.log(userId)
+  // const cartData = JSON.parse(localStorage.getItem("cartData")) || [];
+  // const totalmrp = cartData?.reduce((ac, i) => ac + i.off_price, 0);
+  // const totaloff = cartData?.reduce((ac, i) => ac + Number(i.price), 0);
+  // console.log(totaloff);
+
+  // const dispatch = useDispatch();
+  // const userData = useSelector((store) => store.usergetdatareducer.userdata);
+  // console.log("user", userData);
+
+  // useEffect(() => {
+  //   dispatch(usergetdataaction());
+  //   const loginUserData = userData?.filter((ele) => ele.id == userId);
+  //   console.log("loginUserData", loginUserData);
+  // }, []);
+
+  // // const discountedprice = totalmrp - offp;
+  // // setTotalmrp(ans);
+  // // function ManualClose() {
+  // //   const { isOpen, onOpen, onClose } = useDisclosure()
+  // const navigate = useNavigate();
+  // const arr = [1, 2, 3];
+
+  // // useEffect(() => {
+  // //   getCartData();
+  // // }, []);
+
+  // const getUserData = () => {
+  //   axios
+  //     .get(" https://awful-fly-shoulder-pads.cyclic.app/admin_signup")
+  //     .then((res) => {
+       
+  //       setCurrUser(res.data[0].admin_name);
+       
+  //     });
+  // };
+  // // https://awful-fly-shoulder-pads.cyclic.app/admin_signup
+
+  // useEffect(() => {
+  //   getUserData();
+  // }, []);
+
+  // if(cartData==0){
+  //   return (
+  //     <>
+  //       <h1>Cart Empty</h1>
+  //     </>
+  //   )
+    
   return (
     <>
       <div className={styles.maindiv}>
