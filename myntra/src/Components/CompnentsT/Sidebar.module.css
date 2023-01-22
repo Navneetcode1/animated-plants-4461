@@ -15,10 +15,10 @@
     flex-direction: column;
     align-items: center;
 } */
-.side {
+/* .side {
     border-top: 1px solid gray;
     font-size: 12px;
-}
+} */
 
 .side div{
     /* border: 1px solid red; */
@@ -46,5 +46,6 @@
 .fill {
     /* border: 1px solid red; */
     align-content: center;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
+
 }
