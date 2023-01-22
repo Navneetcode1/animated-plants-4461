@@ -1,6 +1,6 @@
 .card {
     /* width: 25%; */
-    height: 318px;
+    height: 360px;
     /* border: 1px solid red; */
     border-radius: 5px;
     line-height: 10px;  
@@ -38,12 +38,12 @@
 
 .brand {
     position: absolute;
-    top: 72%;
+    top: 83%;
 
 }
 .price {
     position: absolute;
-    top: 85%;
+    top: 95%;
 }
 
 .wishlist {

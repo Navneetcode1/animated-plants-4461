@@ -59,6 +59,9 @@
     justify-content: space-between;
     gap: 10%;
 }
+.cartAdd button:nth-child(1):disabled {
+    background-color: gray;
+}
 
 .cartAdd button:nth-child(1) {
     font-size: 16px;

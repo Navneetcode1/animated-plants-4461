@@ -38,8 +38,10 @@ const AllRoutes = () => {
 
 
             <Route path='/checkout' element={<CartPayment />} />
+
             <Route path='/checkout/address' element={<CartAddress />} />
             <Route path='/checkout/address/payment' element={<FinalPayment />} />
+
 
         </Routes>
     )
