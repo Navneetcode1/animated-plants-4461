@@ -1,6 +1,6 @@
 
 
-import { Button, Flex, Modal, ModalBody, ModalCloseButton, ModalContent, ModalHeader, ModalOverlay, useDisclosure } from '@chakra-ui/react'
+import { Button, Flex, Modal, ModalBody, ModalCloseButton, ModalContent, ModalHeader, ModalOverlay, SimpleGrid, Stack, useDisclosure } from '@chakra-ui/react'
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import addmenproductaction from "../Redux/Auth/Admin/AdminProduct/AddMenData/addmendataaction"
@@ -33,7 +33,7 @@ const Mendata = () => {
         dispatch(reducemenamount(id,count,value))
     }
     return (
-        <div>
+        <Stack>
             <Flex justifyContent="space-around" alignItems="center">
             <h3>ProductCount: {data && data.length}</h3>
             <Button onClick={onOpen}>Add Product</Button>
@@ -49,12 +49,12 @@ const Mendata = () => {
             </Modal>
            
             </Flex>
-            <Flex className="prod-stack" >
+            <SimpleGrid columns={[ 2, 3, 5, 6]} width="100%" gap={5}>
                 {
                     data && data.map(ele => <ProductDetails key={ele.id + Math.random()} {...ele} deleteaction={deletemenaction} getdata={getmenData} addamount={addamount} reduceamount={reduceamount}/>)
                 }
-            </Flex>
-        </div>
+            </SimpleGrid>
+        </Stack>
     )
 }
 

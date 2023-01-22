@@ -16,7 +16,10 @@ const AdminPage = () => {
           
             </Flex>
         </Stack>
-        <Tabs variant='enclosed' width="50%" margin="auto"  align="center">
+        <Flex  marginBottom="5%" width={["80%","60%","50%"]}  justifyContent="center" margin="auto">
+        <Box>
+        
+        <Tabs variant='enclosed'  >
             <TabList>
         
                 <Tab>Ban User</Tab>
@@ -32,6 +35,9 @@ const AdminPage = () => {
                 </TabPanel>
             </TabPanels>
         </Tabs>
+      
+        </Box>
+        </Flex>
         <Tabs align="center">
             <TabList>
                 <Tab>Men</Tab>
@@ -46,6 +52,7 @@ const AdminPage = () => {
                 </TabPanel>
             </TabPanels>
         </Tabs>
+        
     </Stack>
     )
 }
