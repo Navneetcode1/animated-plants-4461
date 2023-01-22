@@ -1,10 +1,61 @@
-import React from "react";
+//cartpage
+import React, { useEffect, useState } from "react";
 import styles from "./CartPayment.module.css";
+
 // import fashion_mantra as sitelogo "../Pictures/fashion_mantra.png";
 import logoicon from "../pictures/logoicon.png";
+import { useNavigate } from "react-router";
+import { Link } from "react-router-dom";
+import axios from "axios";
 // import pic from "./pictures/fashion_mantra.png";
 
-const CartPayment = () => {
+export const CartPayment = () => {
+  const [cartArr, setCartArr] = useState([]);
+  const [currUser, setCurrUser] = useState("");
+  // const [totalmrp, setTotalmrp] = useState(0);
+  const totalmrp = cartArr?.reduce((ac, i) => ac + i.off_price, 0);
+  const totaloff = cartArr?.reduce((ac, i) => ac + Number(i.price), 0);
+  console.log(totaloff);
+  // const discountedprice = totalmrp - offp;
+  // setTotalmrp(ans);
+  // function ManualClose() {
+  //   const { isOpen, onOpen, onClose } = useDisclosure()
+  const navigate = useNavigate();
+  const arr = [1, 2, 3];
+  const getCartData = () => {
+    axios.get("https://cheerful-trunks-duck.cyclic.app/cart").then((res) => {
+      console.log("res.data", typeof res.data, res.data);
+
+      setCartArr([...res.data]);
+      // console.log("cartArr", typeof cartArr, cartArr);
+    });
+  };
+
+  useEffect(() => {
+    getCartData();
+  }, []);
+
+  const getUserData = () => {
+    axios
+      .get(" https://awful-fly-shoulder-pads.cyclic.app/admin_signup")
+      .then((res) => {
+        // console.log(
+        //   "res_user.data.data",
+        //   typeof res.data,
+        //   res.data[0].admin_name
+        // );
+        // console.log("res.data", typeof res.data, res.data);
+        setCurrUser(res.data[0].admin_name);
+        // setCartArr([...res.data]);
+        // console.log("cartArr", typeof cartArr, cartArr);
+      });
+  };
+  // https://awful-fly-shoulder-pads.cyclic.app/admin_signup
+
+  useEffect(() => {
+    getUserData();
+  }, []);
+
   return (
     <>
       <div className={styles.maindiv}>
@@ -34,11 +85,13 @@ const CartPayment = () => {
                 <div className={styles.addresscontent}>
                   <div>
                     <p>
-                      Deliver to: <b>Cx name here</b>
+                      Deliver to: <b>{currUser}</b>
                     </p>
                   </div>
                   <div>
-                    <p>Cx : whole address in detail in pincode here</p>
+                    <p>
+                      Delivery Address : Bunglow no.1, High Street, Varanasi
+                    </p>
                   </div>
                 </div>
                 <div className={styles.addressbtn}>
@@ -64,25 +117,56 @@ const CartPayment = () => {
               </div>
 
               <div className={styles.proditemcardlist}>
-                <div className={styles.proditemcardcard}>
-                  <div className={styles.actualcard}>
-                    <div className={styles.brandname}>Hrx by hritik</div>
-                    <div className={styles.productname}>mens tshirt</div>
-                    <div className={styles.soldby}>sold by: arttees</div>
-                    <div className={styles.itemaincontainer}>
-                      <div>
-                        <div>
-                          <div>Size: eg.5</div>
+                {cartArr?.map((item) => {
+                  return (
+                    <div
+                      key={Math.random()}
+                      className={styles.proditemcardcard}
+                    >
+                      <img
+                        // src="https://assets.myntassets.com/f_webp,dpr_1.0,q_60,w_210,c_limit,fl_progressive/assets/images/8988247/2020/10/22/c89c54cc-de70-4815-9108-fa1f5d01ad171603366379751-HRX-by-Hrithik-Roshan-Men-Grey-Out-Back-Outdoor-Shoes-195160-1.jpg"
+                        alt=""
+                        src={item.images?.image1}
+                      />
+                      <div className={styles.actualcard}>
+                        <div className={styles.brandname}>{item.brand}</div>
+                        <div className={styles.productname}>{item.title}</div>
+                        <div className={styles.soldby}>sold by: arttees</div>
+                        <div className={styles.itemaincontainer}>
+                          <div>
+                            <div>
+                              <div>Size: {item.sizes && item.sizes[1]}</div>
+                            </div>
+                          </div>
+                          <div>
+                            <div>
+                              <div>Qty: 1</div>
+                            </div>
+                          </div>
                         </div>
-                      </div>
-                      <div>
-                        <div>
-                          <div>Qty: eg.2</div>
+                        <div style={{ display: "flex", gap: "10px" }}>
+                          <div className={styles.brandname}>
+                            {" "}
+                            <b> ₹{item.price}</b>
+                          </div>
+                          <div className={styles.brandname}>
+                            <s>₹{item.off_price}</s>
+                          </div>
+                          <div className={styles.brandname}>
+                            {item.discount}% off
+                          </div>
+                        </div>
+
+                        <div className={styles.brandname}>
+                          30 days return available
+                        </div>
+                        <div className={styles.expressdelivery}>
+                          Express delivery in 2 days
                         </div>
                       </div>
                     </div>
-                  </div>
-                </div>
+                  );
+                })}
               </div>
             </div>
             {/*-------------- left section end----------------------*/}
@@ -90,20 +174,72 @@ const CartPayment = () => {
             {/*-------------- right section start----------------------*/}
 
             <div className={styles.rightdiv}>
-              <div className={styles.coupondiv}>
-                <div className={styles.couponhead}>
-                  <p> COUPONS</p>
-                </div>
-                <div className={styles.couponbasecontent}>
-                  <div className={styles.contenttext}>Apply coupons</div>
-                  <div className={styles.applybtn}>
-                    <button>Apply</button>
+              <div>
+                <div className={styles.coupondiv}>
+                  <div className={styles.couponhead}>
+                    <p> COUPONS</p>
+                  </div>
+                  <div className={styles.couponbasecontent}>
+                    <div className={styles.contenttext}>Apply coupons</div>
+                    <div className={styles.applybtn}>
+                      <button>Apply</button>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div className={styles.coupondiv}>
+                <div className={styles.coupondiv}>
+                  <div className={styles.gifthead}>
+                    <p>GIFTING AND PERSONALIZATION</p>
+                  </div>
+
+                  <div className={styles.gifthead}>
+                    <p>
+                      {" "}
+                      <b> Buying for a loved one? </b>
+                    </p>
+                    <p>Add Gift Wrap @25Rs</p>
+                  </div>
+                </div>
+                <hr />
                 <div className={styles.gifthead}>
-                  <p>GIFTING AND PERSONALIZATION</p>
+                  <p>
+                    {" "}
+                    <b> PRICE DETAILS</b>
+                  </p>
+                </div>
+                <div className={styles.gifthead}>
+                  <table>
+                    <thead></thead>
+                    <tbody>
+                      <tr>
+                        <td>Total MRP</td>
+                        <td>₹{totalmrp}</td>
+                      </tr>
+                      <tr>
+                        <td>Discount on MRP</td>
+                        <td>₹"l"</td>
+                      </tr>
+                      <tr>
+                        <td>Coupon Discount</td>
+                        <td>₹9539</td>
+                      </tr>
+                      <tr>
+                        <td>Convenience Fee</td>
+                        <td>₹9539</td>
+                      </tr>
+                      <tr>
+                        <td>Total Amount</td>
+                        <td>₹9539</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <div className={styles.btndiv}>
+                    <Link to="/checkout/address">
+                      {" "}
+                      <div className={styles.subpaybtn}>
+                        <button> PLACE ORDER</button>
+                      </div>
+                    </Link>
+                  </div>
                 </div>
               </div>
             </div>
@@ -114,5 +250,3 @@ const CartPayment = () => {
     </>
   );
 };
-
-export default CartPayment;

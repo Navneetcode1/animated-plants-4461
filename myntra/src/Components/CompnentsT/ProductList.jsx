@@ -30,7 +30,13 @@ const ProductList = () => {
     },[location.search])
 
     if(isLoading) {
-        return <h1>...Loading</h1>
+        return (
+                <>
+                    <div className={styles.loading}>
+                        <img src="https://www.downgraf.com/wp-content/uploads/2019/05/Loader-animation-principle-freebie.gif?x34408" alt="" />
+                    </div>
+                </>
+            )
     }
 
   return (
