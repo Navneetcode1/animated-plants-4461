@@ -31,3 +31,14 @@
     width: 200px;
 }
 
+@media screen and (min-width: 336px) and (max-width: 576px) {
+    .filterMain {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 577px) and (max-width: 876px) {
+    .filterMain {
+        display: none;
+    }
+}

@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+  }
+
 .card {
     /* width: 25%; */
     height: 360px;
@@ -73,8 +77,16 @@
     
 }
 
-@media screen and (max-width: 1250px){
+@media screen and (min-width: 336px) and (max-width: 576px){
     .card{
         width: 200px;
+    }
+}
+
+
+@media screen and (min-width: 577px) and (max-width: 876px){
+    .card{
+        width: 100px;
+        height: 170px; 
     }
 }

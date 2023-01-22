@@ -68,29 +68,7 @@ useEffect(() => {
 
        
     </div>
-    <div className={styles.brand}>
-        <div className={styles.fill}>
-            Filter by brand
-        </div>
-        <div>  
-        <input type="checkbox" value="Roadster"  />
-        <label>Roadster</label>
-        </div>
-        <div>  
-        <input type="checkbox" value="HERE&NOW" />
-        <label>HERE&NOW</label>
-        </div>
-        <div>  
-        <input type="checkbox" value="Clovia"  />
-        <label>Clovia</label>
-        </div>
-       
-        <div>  
-        <input type="checkbox" value="Dressberry"  />
-        <label>Dressberry</label>
-        </div>
-      
-        </div>
+    
    
     </div>
   )

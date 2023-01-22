@@ -98,3 +98,33 @@
    text-align: left;
     
 }
+
+@media screen and (min-width: 577px) and (max-width: 876px) {
+    
+    .images{
+        width: 40%;
+        border: 1px solid red; 
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 10px;
+    } 
+  
+ } 
+
+
+
+@media screen and (min-width: 336px) and (max-width: 576px) {
+    .images{
+        width: 50%;
+        /* border: 1px solid red; */
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 10px;
+    }
+    .cartAdd button:nth-child(1){
+        font-size: 7px;
+    }
+    .cartAdd button {
+        font-size: 10px;
+    }
+}
