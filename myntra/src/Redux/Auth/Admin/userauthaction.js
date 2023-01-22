@@ -21,9 +21,9 @@ export const banuser = (data) => (dispatch) => {
 
 
 
-export const removeban = (data) => (dispatch) => {
+export const removeban = (id) => (dispatch) => {
     dispatch({ type: types.REMOVEBANNREQUEST })
-    return axios.delete("https://awful-fly-shoulder-pads.cyclic.app/user_ban", data)
+    return axios.delete(`https://awful-fly-shoulder-pads.cyclic.app/user_ban/${id}`, )
         .then(r => dispatch({ type: types.REMOVEBANNSUCCESS, payload: r.data }))
         .catch(e => dispatch({ type: types.REMOVEBANNFAILURE }))
 }

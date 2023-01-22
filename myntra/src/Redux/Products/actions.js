@@ -20,7 +20,8 @@ export const getProduct = (param) => (dispatch) => {
         dispatch(getProductSuccessAction(res.data))
     })
     .catch((err) => {
-        dispatch(getProductFailureAction())
+      console.log(err)
+      dispatch(getProductFailureAction())
     })
 }
 

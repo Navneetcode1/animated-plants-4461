@@ -9,6 +9,9 @@ import FinalPayment from '../PagesA/FinalPayment'
 
 import Mens from './Mens'
 
+import {AdminPage} from "../Upage/AdminPage"
+
+
 
 import ProductDetail from '../PagesT/ProductDetail'
 import SinglePro from '../Components/CompnentsT/SinglePro'
@@ -16,9 +19,10 @@ import Home from '../VPages/Home'
 import {LoginPage} from "../Upage/LoginPage"
 import {SignupPage} from "../Upage/SignupPage"
 import {AdminLogin} from "../Upage/AdminLogin"
-import {AdminPage} from "../Upage/AdminPage"
+// import {AdminPage} from "../Upage/AdminPage"
 import ProductList from '../Components/CompnentsT/ProductList'
 // import SinglePro from "../Components/CompnentsT/SinglePro"
+
 
 
 const AllRoutes = () => {
@@ -29,6 +33,9 @@ const AllRoutes = () => {
             <Route path='/checkout' element={<CartPayment />} />
 
             <Route path='/mens' element={<Mens />} />
+
+            <Route path="/adminpage" element={<AdminPage/>}/>
+
             
 
             <Route path='/checkout/address' element={<CartAddress />} />

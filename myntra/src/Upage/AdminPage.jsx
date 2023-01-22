@@ -19,8 +19,8 @@ const AdminPage = () => {
         <Tabs variant='enclosed' width="50%" margin="auto" border="1px solid red" align="center">
             <TabList>
         
-                <Tab>Bann User</Tab>
-                <Tab>Remove Bann of a User</Tab>
+                <Tab>Ban User</Tab>
+                <Tab>Ban User List</Tab>
 
             </TabList>
             <TabPanels>

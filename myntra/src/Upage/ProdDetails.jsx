@@ -30,14 +30,14 @@ const ProductDetails = (props) => {
         </TabList>
         <TabPanels>
           <TabPanel>
-            <form onSubmit={(e) => addamount(e, value)}>
+            <form onSubmit={(e) => addamount(e,id,count, value)}>
               <Input type="number" placeholder='Enter the amount' onChange={(e) => setValue(e.target.value)} />
               <Button type="submit" >+</Button>
             </form>
    
           </TabPanel>
           <TabPanel>
-            <form onSubmit={(e) => reduceamount(e, value)}>
+            <form onSubmit={(e) => reduceamount(e,id,count, value)}>
               <Input type="number" placeholder='Enter the amount' onChange={(e) => setValue(e.target.value)} />
               <Button type="submit" >-</Button>
             </form>
