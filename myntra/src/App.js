@@ -26,7 +26,6 @@ function App() {
   return (
     <div className="App">
 
-      <Navbar2 />
     
       <AllRoutes />
     
