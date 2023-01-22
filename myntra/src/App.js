@@ -25,12 +25,22 @@ import Home from "./VPages/Home";
 function App() {
   return (
     <div className="App">
-      {/* <Navbar2 /> */}
+
+      <Navbar2 />
+    
       <AllRoutes />
+    
+  
+    
+      {/* <ProductDetail />  */}
+
+      {/* <Navbar2 /> */}
+   
 
   {/* <Home/> */}
       {/* <ProductList /> */}
    
+
     </div>
   );
 }

@@ -192,17 +192,12 @@ function Main(){
 
     return <Box>
 
-
-
-
-
-
 <Heading fontSize={"26px"} textAlign={"start"} p={"40px"} color={"#3E4152"} letterSpacing={"4px"}>DEAL OF THE DAY</Heading>
 
-<Flex w={"12.5%"}>
+<Flex >
 {dealOfTheDayData.map((el)=>{
     return(
-        <Image src={el.src}/>
+        <Image w={"12.5%"} src={el.src}/>
     )
 })}
 </Flex>
@@ -211,17 +206,17 @@ function Main(){
 <Heading fontSize={"26px"} textAlign={"start"} p={"50px"} color={"#3E4152"} letterSpacing={"4px"}>BEST OF FASHION MYNTRA EXCLUSIVE BRANDS</Heading>
 
 
-<Flex w={"12.1%"} gap={"6px"}>
+<Flex  gap={"6px"}>
 {exclusiveBrandsData1.map((el)=>{
     return(
-        <Image src={el.src}/>
+        <Image w={"12.1%"} src={el.src}/>
     )
 })}
 </Flex>
-<Flex w={"12.1%"} gap={"6px"}>
+<Flex  gap={"6px"}>
 {exclusiveBrandsData2.map((el)=>{
     return(
-        <Image src={el.src}/>
+        <Image w={"12.1%"} src={el.src}/>
     )
 })}
 </Flex>
@@ -230,10 +225,10 @@ function Main(){
 <Heading fontSize={"26px"} textAlign={"start"} p={"50px"} color={"#3E4152"} letterSpacing={"4px"}>TOP PICKS</Heading>
 
 
-<Flex w={"14.25%"}>
+<Flex >
 {topPicsData.map((el)=>{
     return(
-        <Image src={el.src}/>
+        <Image w={"14.25%"} src={el.src}/>
     )
 })}
 </Flex>
@@ -243,17 +238,17 @@ function Main(){
 
 
 
-<Flex w={"12.5%"}>
+<Flex >
 {categoryData1.map((el)=>{
     return(
-        <Image src={el.src}/>
+        <Image w={"12.5%"} src={el.src}/>
     )
 })}
 </Flex>
-<Flex w={"12.5%"}>
+<Flex >
 {categoryData2.map((el)=>{
     return(
-        <Image src={el.src}/>
+        <Image w={"12.5%"} src={el.src}/>
     )
 })}
 </Flex>
@@ -262,17 +257,17 @@ function Main(){
 <Heading fontSize={"26px"} textAlign={"start"} p={"50px"} color={"#3E4152"} letterSpacing={"4px"}>DEALS ON TOP BRANDS</Heading>
 
 
-<Flex w={"12.5%"}>
+<Flex >
 {topBrandsData1.map((el)=>{
     return(
-        <Image src={el.src}/>
+        <Image w={"12.5%"} src={el.src}/>
     )
 })}
 </Flex>
-<Flex w={"12.5%"}>
+<Flex >
 {topBrandsData2.map((el)=>{
     return(
-        <Image src={el.src}/>
+        <Image w={"12.5%"} src={el.src}/>
     )
 })}
 </Flex>
@@ -281,10 +276,10 @@ function Main(){
 <Heading fontSize={"26px"} textAlign={"start"} p={"50px"} color={"#3E4152"} letterSpacing={"4px"}>GIFTING CARDS</Heading>
 
 
-<Flex w={"25%"}>
+<Flex >
 {giftCardsData.map((el)=>{
     return(
-        <Image src={el.src}/>
+        <Image w={"25%"} src={el.src}/>
     )
 })}
 </Flex>
@@ -294,10 +289,10 @@ function Main(){
 
 
 
-<Flex w={"12.5%"}>
+<Flex >
 {women.map((el)=>{
     return(
-        <Image src={el.src}/>
+        <Image w={"12.5%"} src={el.src}/>
     )
 })}
 </Flex>
@@ -308,10 +303,10 @@ function Main(){
 
 
 
-<Flex w={"12.5%"}>
+<Flex >
 {men.map((el)=>{
     return(
-        <Image src={el.src}/>
+        <Image w={"12.5%"} src={el.src}/>
     )
 })}
 </Flex>
@@ -322,10 +317,10 @@ function Main(){
 
 
 
-<Flex w={"14.25%"}>
+<Flex >
 {kids.map((el)=>{
     return(
-        <Image src={el.src}/>
+        <Image w={"14.25%"} src={el.src}/>
     )
 })}
 </Flex>
@@ -372,10 +367,10 @@ function Main(){
 
 
 
-<Flex w={"12.5%"}>
+<Flex >
 {mensData4.map((el)=>{
     return(
-        <Image src={el.src}/>
+        <Image w={"12.5%"} src={el.src}/>
     )
 })}
 </Flex>
