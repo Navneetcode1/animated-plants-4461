@@ -12,6 +12,7 @@ import { getmenData } from '../Redux/Auth/Admin/AdminProduct/MenProduct/getmenda
 import deletemenaction from '../Redux/Auth/Admin/AdminProduct/AddMenData/deletemenaction'
 import { addmenamount, reducemenamount } from '../Redux/Auth/Admin/AdminProduct/AddMenData/menamount'
 
+
 const Mendata = () => {
     const data = useSelector((store => store.menreducer.prod))
     const { isOpen, onOpen, onClose } = useDisclosure()
@@ -20,16 +21,21 @@ const Mendata = () => {
         dispatch(getmenData())
 
     }, [])
-    const addamount =(e,value)=>{
+    const addamount =(e,id,count,value)=>{
         e.preventDefault()
-        dispatch(addmenamount(value))
+
+        console.log(value,id)
+        dispatch(addmenamount(id,count,value))
     }
-    const reduceamount =(e,value)=>{
+    const reduceamount =(e,id,count,value)=>{
         e.preventDefault()
-        dispatch(reducemenamount(value))
+        console.log(value,id)
+        dispatch(reducemenamount(id,count,value))
     }
     return (
         <div>
+            <Flex justifyContent="space-around" alignItems="center">
+            <h3>ProductCount: {data && data.length}</h3>
             <Button onClick={onOpen}>Add Product</Button>
             <Modal isOpen={isOpen} onClose={onClose}>
                 <ModalOverlay />
@@ -41,6 +47,8 @@ const Mendata = () => {
                     </ModalBody>
                 </ModalContent>
             </Modal>
+           
+            </Flex>
             <Flex className="prod-stack" >
                 {
                     data && data.map(ele => <ProductDetails key={ele.id + Math.random()} {...ele} deleteaction={deletemenaction} getdata={getmenData} addamount={addamount} reduceamount={reduceamount}/>)
