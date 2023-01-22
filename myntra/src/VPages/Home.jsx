@@ -12,7 +12,7 @@ function Home() {
 
   return (
     <>
-      {/* <Navbar2 /> */}
+      <Navbar2 />
       <Carousel />
       <Main />
       <Footer />

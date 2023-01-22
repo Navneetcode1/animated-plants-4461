@@ -410,7 +410,7 @@ function Main(){
 
 
 <Grid
-     border={"1px solid red"}
+    
      templateRows={['repeat(auto)','repeat(auto)','repeat(5, 1fr)']}
      templateColumns={['repeat(2,1fr)','repeat(3,1fr)','repeat(6, 1fr)']}
      gap={"0px"}
@@ -420,7 +420,7 @@ function Main(){
      >
  {bestBuyData.map((el)=>{
     return(
-        <Image  border={"1px solid red"} src={el.src} />
+        <Image src={el.src} />
     )
  })}
 </Grid>
