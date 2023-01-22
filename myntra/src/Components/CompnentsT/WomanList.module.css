@@ -13,15 +13,15 @@
     top: 16%; */
 }
 
-@media screen and (max-width: 850px) {
+/* @media  (min-width: 1250) {
         .productList {
-            /* width: 82%;
-            margin-left: 18%;    */ 
+            width: 82%;
+            margin-left: 18%;   
             display: grid;
             grid-template-columns: repeat(3,1fr);
             justify-content: space-evenly;
         }
-  }
+  } */
 
   .loading {
     position: absolute;

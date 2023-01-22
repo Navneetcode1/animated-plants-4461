@@ -1,12 +1,13 @@
 .card {
     /* width: 25%; */
-    height: 318px;
+    height: 360px;
     /* border: 1px solid red; */
     border-radius: 5px;
     line-height: 10px;  
     margin-bottom: 50px;
     position: relative;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    transition: 0.5s ease-in-out;
 }
 
 
@@ -37,13 +38,14 @@
 
 .brand {
     position: absolute;
-    top: 72%;
+    top: 83%;
 
 }
 .price {
     position: absolute;
-    top: 85%;
+    top: 95%;
 }
+
 .wishlist {
     position: absolute;
     top: 65%;
@@ -68,5 +70,11 @@
 }
 .card:hover {
     scale: 1.1;
-    transition: 0.5s ease-in-out;
+    
 }
+
+/* @media (min-width: 1250px){
+    .card{
+        width: 200px;
+    }
+} */

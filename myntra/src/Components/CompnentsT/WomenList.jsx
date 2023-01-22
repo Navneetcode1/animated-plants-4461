@@ -2,14 +2,15 @@ import React from 'react';
 import { useEffect } from 'react';
 import {useDispatch,useSelector} from 'react-redux'
 import { getProduct } from '../../Redux/Products/actions';
-import { ProductCard } from './ProductCard';
-import styles from './Product.module.css';
-import Sidebar from './Sidebar';
+import styles from './WomanList.module.css'
 import { useLocation, useSearchParams } from 'react-router-dom';
-import Filters from './Filters';
-import Navbar2 from '../Navbar2';
 
-const ProductList = () => {
+import { getWomenPro } from '../Redux/Products/actions';
+import Filters from '../Components/CompnentsT/Filters';
+import Sidebar from '../Components/CompnentsT/Sidebar';
+import { ProductCard } from '../Components/CompnentsT/ProductCard';
+
+const WomenList = () => {
 
     const dispatch = useDispatch();
     const products = useSelector((store) => store.productDatareducer.products);
@@ -27,7 +28,7 @@ const ProductList = () => {
             }
         }
         // dispatch()
-        dispatch(getProduct(paramObj))
+        dispatch(getWomenPro(paramObj))
     },[location.search])
 
     if(isLoading) {
@@ -42,7 +43,6 @@ const ProductList = () => {
 
   return (
     <>
-    <Navbar2 />
         <Filters />
     <Sidebar />
     <div className={styles.productList}>
@@ -62,4 +62,4 @@ const ProductList = () => {
   )
 }
 
-export default ProductList
+export default WomenList
