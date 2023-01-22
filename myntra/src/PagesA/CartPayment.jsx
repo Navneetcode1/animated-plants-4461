@@ -9,6 +9,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import usergetdataaction from "../Redux/Auth/UserSignup/usergetdataaction";
+import EmptyCart from "../PagesA/EmptyCart";
 // import pic from "./pictures/fashion_mantra.png";
 
 export const CartPayment = () => {
@@ -65,13 +66,12 @@ export const CartPayment = () => {
     getUserData();
   }, []);
 
-  if(cartData==0){
+  if (cartData == 0) {
     return (
       <>
-        <h1>Cart Empty</h1>
+        <EmptyCart />
       </>
-    )
-    
+    );
   }
   return (
     <>
@@ -122,7 +122,21 @@ export const CartPayment = () => {
                   10% instant discount on credit cards
                 </div>
                 <div className={styles.offersheadcre}>
-                  <button>Show More</button>
+                  <details>
+                    <summary>
+                      {" "}
+                      <button>Show More</button>
+                    </summary>
+                    <p>
+                      10% instant discount on Citi Credit and Debit Cards on a
+                      min spend of Rs.3000
+                      <br />
+                      10% instant discount on ICICI Credit and Debit Cards on a
+                      min spend of Rs.4000
+                      <br />
+                      5% cashback on Paytm Wallet and Postpaid transactions
+                    </p>
+                  </details>
                 </div>
               </div>
 

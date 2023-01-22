@@ -1,14 +1,47 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./CartPayment.module.css";
 import logoicon from "../pictures/logoicon.png";
 import { Link, useNavigate } from "react-router-dom";
 import { Stack } from "@chakra-ui/layout";
 import { Radio } from "@chakra-ui/radio";
 import { Button, useToast } from "@chakra-ui/react";
+import { useDispatch, useSelector } from "react-redux";
+import usergetdataaction from "../Redux/Auth/UserSignup/usergetdataaction";
+import axios from "axios";
 
 const FinalPayment = () => {
   const toast = useToast();
   const navigate = useNavigate();
+
+  const userId = JSON.parse(localStorage.getItem("userId")) || "";
+  // console.log(userId)
+  const cartData = JSON.parse(localStorage.getItem("cartData")) || [];
+  const totalmrp = cartData?.reduce((ac, i) => ac + i.off_price, 0);
+  const totaloff = cartData?.reduce((ac, i) => ac + Number(i.price), 0);
+  console.log(totaloff);
+
+  const dispatch = useDispatch();
+  const userData = useSelector((store) => store.usergetdatareducer.userdata);
+  console.log("user", userData);
+
+  useEffect(() => {
+    dispatch(usergetdataaction());
+    const loginUserData = userData?.filter((ele) => ele.id == userId);
+    console.log("loginUserData", loginUserData);
+  }, []);
+
+  // const getUserData = () => {
+  //   axios
+  //     .get(" https://awful-fly-shoulder-pads.cyclic.app/admin_signup")
+  //     .then((res) => {
+  //       setCurrUser(res.data[0].admin_name);
+  //     });
+  // };
+  // // https://awful-fly-shoulder-pads.cyclic.app/admin_signup
+
+  // useEffect(() => {
+  //   getUserData();
+  // }, []);
 
   const handleclickhome = () => {
     localStorage.setItem("cartData", JSON.stringify([]));
@@ -93,21 +126,17 @@ const FinalPayment = () => {
                 <table>
                   <tr>
                     <td>Total MRP</td>
-                    <td>₹9539</td>
+                    <td>₹{totalmrp}</td>
                   </tr>
                   <tr>
                     <td>Discount on MRP</td>
-                    <td>₹9539</td>
+                    <td>₹{totalmrp - totaloff}</td>
                   </tr>
 
-                  <tr>
-                    <td>Convenience Fee</td>
-                    <td>₹9539</td>
-                  </tr>
                   <hr />
                   <tr>
                     <td>Total Amount</td>
-                    <td>₹9539</td>
+                    <td>₹{totaloff}</td>
                   </tr>
                 </table>
                 <div className={styles.btndiv}>

@@ -1,63 +1,66 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./CartPayment.module.css";
 import logoicon from "../pictures/logoicon.png";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import usergetdataaction from "../Redux/Auth/UserSignup/usergetdataaction";
+import axios from "axios";
 
 const CartAddress = () => {
-  // const [cartArr, setCartArr] = useState([]);
-  // const [currUser, setCurrUser] = useState("");
-  // // const [totalmrp, setTotalmrp] = useState(0);
+  const [cartArr, setCartArr] = useState([]);
+  const [currUser, setCurrUser] = useState("");
+  // const [totalmrp, setTotalmrp] = useState(0);
 
-  // const userId = JSON.parse(localStorage.getItem("userId")) || "";
-  // // console.log(userId)
-  // const cartData = JSON.parse(localStorage.getItem("cartData")) || [];
-  // const totalmrp = cartData?.reduce((ac, i) => ac + i.off_price, 0);
-  // const totaloff = cartData?.reduce((ac, i) => ac + Number(i.price), 0);
-  // console.log(totaloff);
+  const userId = JSON.parse(localStorage.getItem("userId")) || "";
+  // console.log(userId)
+  const cartData = JSON.parse(localStorage.getItem("cartData")) || [];
+  const totalmrp = cartData?.reduce((ac, i) => ac + i.off_price, 0);
+  const totaloff = cartData?.reduce((ac, i) => ac + Number(i.price), 0);
+  console.log(totaloff);
 
-  // const dispatch = useDispatch();
-  // const userData = useSelector((store) => store.usergetdatareducer.userdata);
-  // console.log("user", userData);
+  const dispatch = useDispatch();
+  const userData = useSelector((store) => store.usergetdatareducer.userdata);
+  console.log("user", userData);
 
-  // useEffect(() => {
-  //   dispatch(usergetdataaction());
-  //   const loginUserData = userData?.filter((ele) => ele.id == userId);
-  //   console.log("loginUserData", loginUserData);
-  // }, []);
+  useEffect(() => {
+    dispatch(usergetdataaction());
+    const loginUserData = userData?.filter((ele) => ele.id == userId);
+    console.log("loginUserData", loginUserData);
+  }, []);
 
-  // // const discountedprice = totalmrp - offp;
-  // // setTotalmrp(ans);
-  // // function ManualClose() {
-  // //   const { isOpen, onOpen, onClose } = useDisclosure()
-  // const navigate = useNavigate();
-  // const arr = [1, 2, 3];
-
-  // // useEffect(() => {
-  // //   getCartData();
-  // // }, []);
-
-  // const getUserData = () => {
-  //   axios
-  //     .get(" https://awful-fly-shoulder-pads.cyclic.app/admin_signup")
-  //     .then((res) => {
-       
-  //       setCurrUser(res.data[0].admin_name);
-       
-  //     });
-  // };
-  // // https://awful-fly-shoulder-pads.cyclic.app/admin_signup
+  // const discountedprice = totalmrp - offp;
+  // setTotalmrp(ans);
+  // function ManualClose() {
+  //   const { isOpen, onOpen, onClose } = useDisclosure()
+  const navigate = useNavigate();
+  const arr = [1, 2, 3];
 
   // useEffect(() => {
-  //   getUserData();
+  //   getCartData();
   // }, []);
 
-  // if(cartData==0){
-  //   return (
-  //     <>
-  //       <h1>Cart Empty</h1>
-  //     </>
-  //   )
-    
+  const getUserData = () => {
+    axios
+      .get(" https://awful-fly-shoulder-pads.cyclic.app/admin_signup")
+      .then((res) => {
+
+        setCurrUser(res.data[0].admin_name);
+
+      });
+  };
+  // https://awful-fly-shoulder-pads.cyclic.app/admin_signup
+
+  useEffect(() => {
+    getUserData();
+  }, []);
+
+  if(cartData==0){
+    return (
+      <>
+        <h1>Cart Empty</h1>
+      </>
+    )
+    }
   return (
     <>
       <div className={styles.maindiv}>
@@ -113,23 +116,23 @@ const CartAddress = () => {
                 <table>
                   <tr>
                     <td>Total MRP</td>
-                    <td>₹9539</td>
+                    <td>₹{totalmrp}</td>
                   </tr>
                   <tr>
                     <td>Discount on MRP</td>
-                    <td>₹9539</td>
+                    <td>₹{totalmrp - totaloff}</td>
                   </tr>
                   <tr>
                     <td>Coupon Discount</td>
-                    <td>₹9539</td>
+                    <td>₹0</td>
                   </tr>
                   <tr>
                     <td>Convenience Fee</td>
-                    <td>₹9539</td>
+                    <td>₹0</td>
                   </tr>
                   <tr>
                     <td>Total Amount</td>
-                    <td>₹9539</td>
+                    <td>₹{totaloff}</td>
                   </tr>
                 </table>
                 <div className={styles.btndiv}>
