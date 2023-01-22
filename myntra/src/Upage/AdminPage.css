@@ -6,7 +6,7 @@
 .prod-stack{
         width: 100%;
         height: 500px;
-        border: 1px solid red;
+     
         overflow: scroll;
         margin: auto;
         justify-content: space-evenly;
@@ -32,6 +32,3 @@
 /* .tab{
     font-size: 40%;
 } */
-.countp{
-    color: red;
-}

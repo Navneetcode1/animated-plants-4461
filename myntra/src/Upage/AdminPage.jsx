@@ -1,22 +1,22 @@
-import { Box, Flex, Heading, Input, Link, Stack, Tab, TabList, TabPanel, TabPanels, Tabs, } from "@chakra-ui/react"
+import { Box, Flex, Heading, Input, Stack, Tab, TabList, TabPanel, TabPanels, Tabs, } from "@chakra-ui/react"
 import BannUser from "./BanUser"
 import "./AdminPage.css"
 import Mendata from "./Mendata"
 import Womendata from "./Womendata"
 import RemoveBann from "./RemoveBanUser"
-
+import { Link, useNavigate } from 'react-router-dom'
 const AdminPage = () => {
 
 
     return (<Stack>
-        <Stack border="1px solid red" height="70px" display="flex">
-            <Flex>
+        <Stack  height="70px" display="flex" >
+            <Flex justifyContent="space-around" alignItems="center">
                 <Heading size="md">AdminPage</Heading>
                 <Link to="/">HomePage</Link>
-                <Input type="text" placeholder="Search here . . . ." width="30%" />
+          
             </Flex>
         </Stack>
-        <Tabs variant='enclosed' width="50%" margin="auto" border="1px solid red" align="center">
+        <Tabs variant='enclosed' width="50%" margin="auto"  align="center">
             <TabList>
         
                 <Tab>Ban User</Tab>
