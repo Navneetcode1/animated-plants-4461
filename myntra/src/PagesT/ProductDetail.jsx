@@ -123,7 +123,7 @@ console.log(pro)
                         <button>44</button>
                     </div>
                     <div className={styles.cartAdd}>
-                        <button onClick={handleCart}>ADD TO BAG</button>
+                        <button onClick={handleCart} disabled ={clicked}>ADD TO BAG</button>
                         <button className={styles.wish}>Wishlist</button>
                     </div>
                     <div>

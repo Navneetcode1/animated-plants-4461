@@ -8,12 +8,12 @@
     /* padding-left: 30px; */
     /* padding-right: 0%; */
     /* border: 1px solid red; */
-    /* border-left: 1px solid gray; */
+    border-left: 1px solid gray;
     /* position: absolute;
     top: 16%; */
 }
 
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 1250px) {
         .productList {
             /* width: 82%;
             margin-left: 18%;    */ 
@@ -25,6 +25,6 @@
 
   .loading {
     position: absolute;
-    /* top: 30%; */
-    right: 15%;
+    top: 30%;
+    left: 25%;
   }

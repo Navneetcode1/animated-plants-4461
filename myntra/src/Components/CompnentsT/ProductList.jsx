@@ -34,7 +34,7 @@ const ProductList = () => {
         return (
                 <>
                     <div className={styles.loading}>
-                        <img src="https://www.downgraf.com/wp-content/uploads/2019/05/Loader-animation-principle-freebie.gif?x34408" alt="" />
+                        <img src="https://cdn.dribbble.com/users/1018473/screenshots/3963419/loader.gif" alt="" />
                     </div>
                 </>
             )

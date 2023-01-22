@@ -73,8 +73,8 @@
     
 }
 
-/* @media (min-width: 1250px){
+@media screen and (max-width: 1250px){
     .card{
         width: 200px;
     }
-} */
+}
