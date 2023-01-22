@@ -2,10 +2,11 @@ import { Text,Box,useDisclosure,Modal,ModalOverlay,ModalContent,ModalHeader,Moda
 
 import React,{useState}from 'react'
 
-import React from 'react'
+// import React from 'react'
 
 import { FaUser, FaRegHeart, FaShoppingBag } from "react-icons/fa"
 import { Stack,InputLeftElement,InputGroup } from '@chakra-ui/react'
+import {Link as newLink} from "react-router-dom"
 
 // import { Input } from '@chakra-ui/react'
 
@@ -19,7 +20,7 @@ const Navbar = () => {
     const [size, setSize] = React.useState('md')
 
     const [value,setValue]=useState("")
-=======
+
 
   
     const handleSizeClick = (newSize) => {
@@ -117,12 +118,12 @@ const handleSearch=()=>{
                    <Box fontSize={"md"} gap="10px"  m={"auto"}   display={"flex"} justifyContent={"space-evenly"}  bg={"white"}>
                     <Box color={"gold"} >
                       <Text color={"red"} fontSize={"md"}>Top-Wear</Text>
-                      <Link to="/mens">
+                      <newLink to="/mens">
                       <Text border={"none"} color={"black"}>
                             T-Shirt
                         </Text>
                        
-                        </Link>
+                        </newLink>
                         <Text color="black" fontSize="md">
                           Casual Shirt
                         </Text>

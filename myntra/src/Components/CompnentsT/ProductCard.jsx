@@ -23,9 +23,12 @@ export const ProductCard = ({item}) => {
         <div className={styles.price}>
         <h6>Rs. {item.price} <span className={styles.offPrice}>{item.off_price}</span> </h6>
         </div>
+        <Link to="./productlist/singlepage">
         <div className={styles.wishlist}>
           <button>Whishlist</button>
         </div>
+        </Link>
+       
         
     </div>
     </Link>
