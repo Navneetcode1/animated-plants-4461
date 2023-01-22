@@ -10,7 +10,7 @@ export const ProductCard = ({item}) => {
     // console.log(one)
     // console.log(item.id)
   return (
-    <Link  to={`men/${item.id}`}>
+    <Link  to={`pro/${item.id}`}>
     <div className={styles.card}  >
       
         <img src={item.images.image1} alt="" />
