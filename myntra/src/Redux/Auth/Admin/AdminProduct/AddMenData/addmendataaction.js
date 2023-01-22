@@ -5,7 +5,7 @@ import { ADDMENPRODFAILURE, ADDMENPRODREQUST, ADDMENPRODSUCCESS } from './addmen
 
 const addmenproductaction = (params)=>(dispatch) => {
          dispatch({type:ADDMENPRODREQUST})
-         axios.post("https://cheerful-trunks-duck.cyclic.app/men",params)
+         axios.post("https://cheerful-trunks-duck.cyclic.app/men/",params)
          .then(res=>dispatch({type:ADDMENPRODSUCCESS,payload:res.data}))
          .catch(dispatch({type:ADDMENPRODFAILURE}))
 }

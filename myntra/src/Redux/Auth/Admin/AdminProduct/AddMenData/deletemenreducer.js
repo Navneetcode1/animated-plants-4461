@@ -1,29 +1,28 @@
-
-import { ADDMENPRODFAILURE, ADDMENPRODREQUST, ADDMENPRODSUCCESS } from './addmendataactiontype'
+import { DELETEMENPRODFAILURE,DELETEMENPRODREQUST,DELETEMENPRODSUCCESS  } from "./addmendataactiontype"
 
 const init ={
     isLoading:false,
     isError:false,
     data:"",
 }
-const addmenprodreducer = (state=init,{type,payload}) => {
+const deletemenreducer = (state=init,{type,payload}) => {
    
       switch (type) {
-        case ADDMENPRODREQUST:
+        case DELETEMENPRODREQUST:
           return {
           ...state,
             isLoading:true,
             isError:false,
       
           }
-        case ADDMENPRODSUCCESS:
+        case DELETEMENPRODSUCCESS:
           return {
           ...state,
           isLoading:false,
           isError:false,
           data:payload
         }
-        case ADDMENPRODFAILURE:
+        case DELETEMENPRODFAILURE:
           return {
          ...state,
           isLoading:false, 
@@ -33,4 +32,4 @@ const addmenprodreducer = (state=init,{type,payload}) => {
         return state
       }
     }
-export default addmenprodreducer
+export default deletemenreducer

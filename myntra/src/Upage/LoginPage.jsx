@@ -39,11 +39,13 @@ const LoginPage = () => {
         setData({ ...data, [name]: value })
     }
     let tokendata = JSON.parse(localStorage.getItem("token")) || []
+    let userId = JSON.parse(localStorage.getItem("userid"))||""
     console.log(tokendata)
     const onSubmit = (e,data) => {
         e.preventDefault()
         let banneduser = banneduserdata.filter(ele => ele.email === data.email)
         let loginuser = userdata.filter(ele => ele.email === data.email && ele.password == data.password)
+         
         if (banneduser.length > 0) {
             toast({
                 position:"center",
@@ -64,6 +66,7 @@ const LoginPage = () => {
                 isClosable: true,
               })
             localStorage.setItem("token", JSON.stringify(loginuser[0].token))
+            localStorage.setItem("userId",JSON.stringify(loginuser[0].id))
         }
         else {
             toast({
