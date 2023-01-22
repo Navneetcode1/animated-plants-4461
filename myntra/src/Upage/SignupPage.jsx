@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux"
 import usergetdataaction from '../Redux/Auth/UserSignup/usergetdataaction'
 import "./Signup.css"
 import usersignupaction from '../Redux/Auth/UserSignup/usersignupaction'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 const SignupPage = () => {
   const init = {
@@ -21,7 +21,7 @@ const SignupPage = () => {
   const dispatch = useDispatch()
   const userdata = useSelector(store => store.usergetdatareducer.userdata)
   const isloading = useSelector(store=>store.usergetdatareducer.isloading)
-  console.log(userdata)
+ const navigate =useNavigate()
 
   useEffect(() => {
     dispatch(usergetdataaction())
@@ -59,6 +59,7 @@ const SignupPage = () => {
         isClosable: true,
       })
       setData(init)
+      navigate("/login")
     }
 
  

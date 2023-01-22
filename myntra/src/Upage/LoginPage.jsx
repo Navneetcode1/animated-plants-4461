@@ -8,7 +8,7 @@ import "./Signup.css"
 
 import usergetdataaction from '../Redux/Auth/UserSignup/usergetdataaction'
 import { getbanuserdata } from '../Redux/Auth/Admin/userauthaction'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 const LoginPage = () => {
     const init = {
@@ -41,6 +41,7 @@ const LoginPage = () => {
     let tokendata = JSON.parse(localStorage.getItem("token")) || []
     let userId = JSON.parse(localStorage.getItem("userid"))||""
     console.log(tokendata)
+    const navigate = useNavigate()
     const onSubmit = (e,data) => {
         e.preventDefault()
         let banneduser = banneduserdata.filter(ele => ele.email === data.email)
@@ -67,6 +68,7 @@ const LoginPage = () => {
               })
             localStorage.setItem("token", JSON.stringify(loginuser[0].token))
             localStorage.setItem("userId",JSON.stringify(loginuser[0].id))
+            navigate("/")
         }
         else {
             toast({
