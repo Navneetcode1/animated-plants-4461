@@ -7,12 +7,12 @@ import {
   SimpleGrid,
   Text,
   Image,
-  Link,
   VisuallyHidden,
   chakra,
   useColorModeValue,
   Spacer,
 } from '@chakra-ui/react';
+import {Link} from "react-router-dom"
 import { FaTwitter, FaYoutube, FaInstagram, FaFacebook } from 'react-icons/fa';
 
 const ListHeader = ({ children }) => {
@@ -61,7 +61,7 @@ function Footer(){
         <SimpleGrid columns={{ base: 1, sm: 2, md: 4 }} spacing={8}>
           <Stack align={'flex-start'}>
             <ListHeader>ONLINE SHOPPING</ListHeader>
-            <Link href={'#'}>Men</Link>
+            <Link to={'/mens'}>Men</Link>
             <Link href={'#'}>Women</Link>
             <Link href={'#'}>Kids</Link>
             <Link href={'#'}>Home & Living</Link>
