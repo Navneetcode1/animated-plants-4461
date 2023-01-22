@@ -1,36 +1,59 @@
 import axios from 'axios'
 import React, { useEffect } from 'react'
-import { useState } from 'react'
+import { useState } from 'react';
+import {useDispatch, useSelector} from 'react-redux';
+import usergetdataaction from '../Redux/Auth/UserSignup/usergetdataaction';
+import cartaction from '../Redux/Cartrr/cartaction';
 import styles from './ProductDetail.module.css'
 const ProductDetail = ({pro}) => {
 
     const [count,setCount] = useState(2)
 console.log(count)
-console.log(pro?.images?.image1)
+console.log(pro)
 
-   
+   const dispatch = useDispatch()
 
     useEffect(() => {
-        axios.get("https://cheerful-trunks-duck.cyclic.app/cart")
-        .then((res) => {
-            setCount(res.data.length)
-            //  
-        })
-        .catch((err) => {
-            console.log(err)
-        })
+        // axios.get("https://cheerful-trunks-duck.cyclic.app/cart")
+        // .then((res) => {
+        //     setCount(res.data.length)
+        //     //  
+        // })
+        // .catch((err) => {
+        //     console.log(err)
+        // })
         
-    })
+
+        dispatch(usergetdataaction());
+
+        
+    },[])
+    const userData = useSelector(store => store.usergetdatareducer.userdata)
+
+    console.log(userData);
+
+
+    const userId = JSON.parse(localStorage.getItem("userId")) || "";
+
+    
+
     const handleCart =(e) => {
         e.preventDefault();
 
-        axios.post('https://cheerful-trunks-duck.cyclic.app/cart',{pro})
-        .then((res) => {
-            console.log(res)
-        })
-        .catch((err) => {
-            console.log(err)
-        })
+        // axios.post('https://cheerful-trunks-duck.cyclic.app/cart',{pro})
+        // .then((res) => {
+        //     console.log(res)
+        // })
+        // .catch((err) => {
+        //     console.log(err)
+        // })
+
+            const newUserData = userData.filter(el => el.id == userId)
+            console.log(newUserData[0].cart.push(newUserData));
+
+            console.log(newUserData)
+
+            dispatch(cartaction(userId,pro))
     }
     
 
@@ -55,9 +78,9 @@ console.log(pro?.images?.image1)
         <div className={styles.details}>
             <h3 >{pro.brand}</h3>
             <p>{pro.title}</p>
-            <p>{pro.rating} <span>{pro.count}</span> </p>
+            <p>Rating:-{pro.rating} <span>Review:-{pro.count}</span> </p>
             <div className={styles.divider}></div>
-            <h3>₹{pro.price} <span>{pro.off_price} {pro.discount}</span></h3>
+            <h3>₹{pro.price} <span className={styles.off_price}>{pro.off_price} </span><span className={styles.dis}> {pro.discount}% off</span></h3>
 
             <h5>Select Size</h5>
             <div className={styles.buttons}>
@@ -68,11 +91,24 @@ console.log(pro?.images?.image1)
             </div>
             <div className={styles.cartAdd}>
                 <button onClick={handleCart}>ADD TO BAG</button>
-                <button>Wishlist</button>
+                <button className={styles.wish}>Wishlist</button>
             </div>
             <div>
-            <p>
+            <p className={styles.discription}>
                 {pro.description}
+            </p>
+        </div>
+        <div>
+            <h5>Dilevery options</h5>
+            <input type="text" placeholder='Enter your pincode'/>
+            <p className={styles.opt}>
+            100% Original Products
+            <br />
+Pay on delivery might be available
+<br />
+Easy 30 days returns and exchanges
+<br />
+Try & Buy might be available
             </p>
         </div>
         </div>

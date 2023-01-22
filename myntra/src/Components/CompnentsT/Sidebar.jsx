@@ -38,7 +38,7 @@ useEffect(() => {
   return (
     <div className={styles.main}>
         <div className={styles.fill}>
-            Filter
+            Filter by colour
         </div>
     <div className={styles.side} >
         <div>  
@@ -69,30 +69,27 @@ useEffect(() => {
        
     </div>
     <div className={styles.brand}>
-        <div>  
-        <input type="checkbox" value="black" onChange={handleFilter} checked={color.includes("black")} />
-        <label>Black</label>
+        <div className={styles.fill}>
+            Filter by brand
         </div>
         <div>  
-        <input type="checkbox" value="white" onChange={handleFilter} checked={color.includes("white")} />
-        <label>White</label>
+        <input type="checkbox" value="Roadster"  />
+        <label>Roadster</label>
         </div>
         <div>  
-        <input type="checkbox" value="pink" onChange={handleFilter} checked={color.includes("pink")} />
-        <label>Pink</label>
+        <input type="checkbox" value="HERE&NOW" />
+        <label>HERE&NOW</label>
         </div>
         <div>  
-        <input type="checkbox" value="red" onChange={handleFilter} checked={color.includes("red")} />
-        <label>Red</label>
+        <input type="checkbox" value="Clovia"  />
+        <label>Clovia</label>
         </div>
+       
         <div>  
-        <input type="checkbox" value="blue" onChange={handleFilter} checked={color.includes("blue")} />
-        <label>Blue</label>
+        <input type="checkbox" value="Dressberry"  />
+        <label>Dressberry</label>
         </div>
-        <div>  
-        <input type="checkbox" value="green" onChange={handleFilter} checked={color.includes("green")}  />
-        <label>Green</label>
-        </div>
+      
         </div>
    
     </div>

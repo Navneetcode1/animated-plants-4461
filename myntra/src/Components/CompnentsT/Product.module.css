@@ -22,3 +22,9 @@
             justify-content: space-evenly;
         }
   } */
+
+  .loading {
+    position: absolute;
+    /* top: 30%; */
+    right: 15%;
+  }
