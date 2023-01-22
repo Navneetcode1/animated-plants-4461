@@ -17,7 +17,6 @@ import latestData from "../Utils/latestData.json"
 
 import { 
     Image,
-    Flex,
     Grid,
     Heading,
 } from '@chakra-ui/react';
@@ -192,149 +191,211 @@ function Main(){
 
     return <Box>
 
-<Heading fontSize={"26px"} textAlign={"start"} p={"40px"} color={"#3E4152"} letterSpacing={"4px"}>DEAL OF THE DAY</Heading>
+<Heading fontSize={[ '18px','22px','26px' ]} textAlign={"start"} p={{ base: '30px', md: '30px', lg: '40px' }} color={"#3E4152"} letterSpacing={"4px"}>DEAL OF THE DAY</Heading>
 
-<Flex >
-{dealOfTheDayData.map((el)=>{
-    return(
-        <Image w={"12.5%"} src={el.src}/>
-    )
-})}
-</Flex>
-
-
-<Heading fontSize={"26px"} textAlign={"start"} p={"50px"} color={"#3E4152"} letterSpacing={"4px"}>BEST OF FASHION MYNTRA EXCLUSIVE BRANDS</Heading>
-
-
-<Flex  gap={"6px"}>
-{exclusiveBrandsData1.map((el)=>{
-    return(
-        <Image w={"12.1%"} src={el.src}/>
-    )
-})}
-</Flex>
-<Flex  gap={"6px"}>
-{exclusiveBrandsData2.map((el)=>{
-    return(
-        <Image w={"12.1%"} src={el.src}/>
-    )
-})}
-</Flex>
-
-
-<Heading fontSize={"26px"} textAlign={"start"} p={"50px"} color={"#3E4152"} letterSpacing={"4px"}>TOP PICKS</Heading>
-
-
-<Flex >
-{topPicsData.map((el)=>{
-    return(
-        <Image w={"14.25%"} src={el.src}/>
-    )
-})}
-</Flex>
-
-
-<Heading fontSize={"26px"} textAlign={"start"} p={"50px"} color={"#3E4152"} letterSpacing={"4px"}>CATEGORIES TO BAG</Heading>
-
-
-
-<Flex >
-{categoryData1.map((el)=>{
-    return(
-        <Image w={"12.5%"} src={el.src}/>
-    )
-})}
-</Flex>
-<Flex >
-{categoryData2.map((el)=>{
-    return(
-        <Image w={"12.5%"} src={el.src}/>
-    )
-})}
-</Flex>
-
-
-<Heading fontSize={"26px"} textAlign={"start"} p={"50px"} color={"#3E4152"} letterSpacing={"4px"}>DEALS ON TOP BRANDS</Heading>
-
-
-<Flex >
-{topBrandsData1.map((el)=>{
-    return(
-        <Image w={"12.5%"} src={el.src}/>
-    )
-})}
-</Flex>
-<Flex >
-{topBrandsData2.map((el)=>{
-    return(
-        <Image w={"12.5%"} src={el.src}/>
-    )
-})}
-</Flex>
-
-
-<Heading fontSize={"26px"} textAlign={"start"} p={"50px"} color={"#3E4152"} letterSpacing={"4px"}>GIFTING CARDS</Heading>
-
-
-<Flex >
-{giftCardsData.map((el)=>{
-    return(
-        <Image w={"25%"} src={el.src}/>
-    )
-})}
-</Flex>
-
-
-<Heading fontSize={"26px"} textAlign={"start"} p={"50px"} color={"#3E4152"} letterSpacing={"4px"}>TRENDS FOR HER</Heading>
-
-
-
-<Flex >
-{women.map((el)=>{
-    return(
-        <Image w={"12.5%"} src={el.src}/>
-    )
-})}
-</Flex>
-
-
-
-<Heading fontSize={"26px"} textAlign={"start"} p={"50px"} color={"#3E4152"} letterSpacing={"4px"}>TRENDS FOR HIM</Heading>
-
-
-
-<Flex >
-{men.map((el)=>{
-    return(
-        <Image w={"12.5%"} src={el.src}/>
-    )
-})}
-</Flex>
-
-
-
-<Heading fontSize={"26px"} textAlign={"start"} p={"50px"} color={"#3E4152"} letterSpacing={"4px"}>BEST OF KIDSWARE</Heading>
-
-
-
-<Flex >
-{kids.map((el)=>{
-    return(
-        <Image w={"14.25%"} src={el.src}/>
-    )
-})}
-</Flex>
-
-
-
-<Heading fontSize={"26px"} textAlign={"start"} p={"50px"} color={"#3E4152"} letterSpacing={"4px"}>LATEST IN BEAUTY & GROOMING</Heading>
 
 
 
 <Grid
      
-     templateRows='repeat(2, 1fr)'
-     templateColumns='repeat(4, 1fr)'
+     templateRows={['repeat(auto)','repeat(auto)','repeat(auto)']}
+     templateColumns={['repeat(2,1fr)','repeat(4,1fr)','repeat(8, 1fr)']}
+     >
+ {dealOfTheDayData.map((el)=>{
+    return(
+        <Image src={el.src} />
+    )
+ })}
+</Grid>
+
+
+<Heading fontSize={[ '18px','22px','26px' ]} textAlign={"start"} p={"50px"} color={"#3E4152"} letterSpacing={"4px"}>BEST OF FASHION MYNTRA EXCLUSIVE BRANDS</Heading>
+
+
+
+<Grid
+     
+     templateRows={['repeat(auto)','repeat(auto)','repeat(auto)']}
+     templateColumns={['repeat(2,1fr)','repeat(4,1fr)','repeat(8, 1fr)']}
+     >
+ {exclusiveBrandsData1.map((el)=>{
+    return(
+        <Image src={el.src} />
+    )
+ })}
+</Grid>
+<Grid
+     
+     templateRows={['repeat(auto)','repeat(auto)','repeat(auto)']}
+     templateColumns={['repeat(2,1fr)','repeat(4,1fr)','repeat(8, 1fr)']}
+     >
+ {exclusiveBrandsData2.map((el)=>{
+    return(
+        <Image src={el.src} />
+    )
+ })}
+</Grid>
+
+
+<Heading fontSize={[ '18px','22px','26px' ]} textAlign={"start"} p={"50px"} color={"#3E4152"} letterSpacing={"4px"}>TOP PICKS</Heading>
+
+
+
+<Grid
+     
+     templateRows={['repeat(auto)','repeat(auto)','repeat(auto)']}
+     templateColumns={['repeat(2,1fr)','repeat(3,1fr)','repeat(7, 1fr)']}
+     >
+ {topPicsData.map((el)=>{
+    return(
+        <Image src={el.src} />
+    )
+ })}
+</Grid>
+
+
+<Heading fontSize={[ '18px','22px','26px' ]} textAlign={"start"} p={"50px"} color={"#3E4152"} letterSpacing={"4px"}>CATEGORIES TO BAG</Heading>
+
+
+
+
+<Grid
+     
+     templateRows={['repeat(auto)','repeat(auto)','repeat(auto)']}
+     templateColumns={['repeat(2,1fr)','repeat(4,1fr)','repeat(8, 1fr)']}
+     >
+ {categoryData1.map((el)=>{
+    return(
+        <Image src={el.src} />
+    )
+ })}
+</Grid>
+<Grid
+     
+     templateRows={['repeat(auto)','repeat(auto)','repeat(auto)']}
+     templateColumns={['repeat(2,1fr)','repeat(4,1fr)','repeat(8, 1fr)']}
+     >
+ {categoryData2.map((el)=>{
+    return(
+        <Image src={el.src} />
+    )
+ })}
+</Grid>
+
+
+<Heading fontSize={[ '18px','22px','26px' ]} textAlign={"start"} p={"50px"} color={"#3E4152"} letterSpacing={"4px"}>DEALS ON TOP BRANDS</Heading>
+
+
+
+<Grid
+     
+     templateRows={['repeat(auto)','repeat(auto)','repeat(auto)']}
+     templateColumns={['repeat(2,1fr)','repeat(4,1fr)','repeat(8, 1fr)']}
+     >
+ {topBrandsData1.map((el)=>{
+    return(
+        <Image src={el.src} />
+    )
+ })}
+</Grid>
+<Grid
+     
+     templateRows={['repeat(auto)','repeat(auto)','repeat(auto)']}
+     templateColumns={['repeat(2,1fr)','repeat(4,1fr)','repeat(8, 1fr)']}
+     >
+ {topBrandsData2.map((el)=>{
+    return(
+        <Image src={el.src} />
+    )
+ })}
+</Grid>
+
+
+<Heading fontSize={[ '18px','22px','26px' ]} textAlign={"start"} p={"50px"} color={"#3E4152"} letterSpacing={"4px"}>GIFTING CARDS</Heading>
+
+
+
+<Grid
+     
+     templateRows={['repeat(auto)','repeat(auto)','repeat(auto)']}
+     templateColumns={['repeat(1,1fr)','repeat(2,1fr)','repeat(4, 1fr)']}
+     >
+ {giftCardsData.map((el)=>{
+    return(
+        <Image src={el.src} />
+    )
+ })}
+</Grid>
+
+
+<Heading fontSize={[ '18px','22px','26px' ]} textAlign={"start"} p={"50px"} color={"#3E4152"} letterSpacing={"4px"}>TRENDS FOR HER</Heading>
+
+
+
+
+
+<Grid
+     
+     templateRows={['repeat(auto)','repeat(auto)','repeat(auto)']}
+     templateColumns={['repeat(2,1fr)','repeat(4,1fr)','repeat(8, 1fr)']}
+     >
+ {women.map((el)=>{
+    return(
+        <Image src={el.src} />
+    )
+ })}
+</Grid>
+
+
+
+<Heading fontSize={[ '18px','22px','26px' ]} textAlign={"start"} p={"50px"} color={"#3E4152"} letterSpacing={"4px"}>TRENDS FOR HIM</Heading>
+
+
+
+
+
+<Grid
+     
+     templateRows={['repeat(auto)','repeat(auto)','repeat(auto)']}
+     templateColumns={['repeat(2,1fr)','repeat(4,1fr)','repeat(8, 1fr)']}
+     >
+ {men.map((el)=>{
+    return(
+        <Image src={el.src} />
+    )
+ })}
+</Grid>
+
+
+
+<Heading fontSize={[ '18px','22px','26px' ]} textAlign={"start"} p={"50px"} color={"#3E4152"} letterSpacing={"4px"}>BEST OF KIDSWARE</Heading>
+
+
+
+
+
+<Grid
+     
+     templateRows={['repeat(auto)','repeat(auto)','repeat(auto)']}
+     templateColumns={['repeat(2,1fr)','repeat(3,1fr)','repeat(7, 1fr)']}
+     >
+ {kids.map((el)=>{
+    return(
+        <Image src={el.src} />
+    )
+ })}
+</Grid>
+
+
+
+<Heading fontSize={[ '18px','22px','26px' ]} textAlign={"start"} p={"50px"} color={"#3E4152"} letterSpacing={"4px"}>LATEST IN BEAUTY & GROOMING</Heading>
+
+
+
+<Grid
+     
+     templateRows={['repeat(auto)','repeat(auto)','repeat(2, 1fr)']}
+     templateColumns={['repeat(1,1fr)','repeat(2,1fr)','repeat(4, 1fr)']}
      >
  {latestData.map((el)=>{
     return(
@@ -344,18 +405,22 @@ function Main(){
 </Grid>
 
 
-<Heading fontSize={"26px"} textAlign={"start"} p={"50px"} color={"#3E4152"} letterSpacing={"4px"}>BEST BUYS</Heading>
+<Heading fontSize={[ '18px','22px','26px' ]} textAlign={"start"} p={"50px"} color={"#3E4152"} letterSpacing={"4px"}>BEST BUYS</Heading>
 
 
 
 <Grid
+     border={"1px solid red"}
+     templateRows={['repeat(auto)','repeat(auto)','repeat(5, 1fr)']}
+     templateColumns={['repeat(2,1fr)','repeat(3,1fr)','repeat(6, 1fr)']}
+     gap={"0px"}
+     alignItem={"center"}
+     justifyContent={"center"}
      
-     templateRows='repeat(5, 1fr)'
-     templateColumns='repeat(6, 1fr)'
      >
  {bestBuyData.map((el)=>{
     return(
-        <Image src={el.src} />
+        <Image  border={"1px solid red"} src={el.src} />
     )
  })}
 </Grid>
@@ -363,17 +428,23 @@ function Main(){
 
 
 
-<Heading fontSize={"26px"} textAlign={"start"} p={"40px"} color={"#3E4152"} letterSpacing={"4px"}>SPRING SUMMER SEASON CHECKLIST</Heading>
+<Heading fontSize={[ '18px','22px','26px' ]} textAlign={"start"} p={"40px"} color={"#3E4152"} letterSpacing={"4px"}>SPRING SUMMER SEASON CHECKLIST</Heading>
 
 
 
-<Flex >
-{mensData4.map((el)=>{
+<Grid
+     
+     templateRows={['repeat(auto)','repeat(auto)','repeat(2, 1fr)']}
+     templateColumns={['repeat(2,1fr)','repeat(4,1fr)','repeat(8, 1fr)']}
+     >
+ {mensData4.map((el)=>{
     return(
-        <Image w={"12.5%"} src={el.src}/>
+        <Image src={el.src} />
     )
-})}
-</Flex>
+ })}
+</Grid>
+
+
 
     </Box>
 }
