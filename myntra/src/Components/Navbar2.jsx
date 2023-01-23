@@ -8,6 +8,7 @@ import Navbar from './Navbar';
 
 const Navbar2 = ({text}) => {
     const val=text;
+    const token = JSON.parse(localStorage.getItem("token"))
    const handleA=()=>{
    
    }
@@ -31,13 +32,14 @@ const Navbar2 = ({text}) => {
   <ButtonGroup gap='2'>
     <Box mt={2} >
       <Link to="/login">
-      <Heading  size='md'>Login In</Heading>
+      <Heading  size='md'>{token? token: "Login In"}</Heading>
       </Link>
   
    </Box>
-   <Link  to="/signup">
+   {!token &&   <Link  to="/signup">
    <Button style={{backgroundColor:"gold",border:"none"}}>Sign Up Free</Button>
-   </Link>
+   </Link>}
+
 
 </ButtonGroup>
 </Flex>

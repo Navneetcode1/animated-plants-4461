@@ -36,7 +36,7 @@ const RemoveBann = () => {
       {
         banneddata && banneddata.map(ele=><Flex justifyContent="space-between" alignItems="center" key={ele.id}>
           <h3>{ele.email}</h3>
-          <Button onClick={(e)=>handleSubmit(e,ele.id)}>{ImCross}</Button>
+          <Button onClick={(e)=>handleSubmit(e,ele.id)}>Remove</Button>
         </Flex>)
       }
     {/* <form onSubmit={(e)=>handleSubmit(e,data)}>
