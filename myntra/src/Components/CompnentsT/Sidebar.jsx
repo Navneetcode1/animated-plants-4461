@@ -10,13 +10,19 @@ const Sidebar = () => {
 
     const [searchParams,setSearhParams] = useSearchParams();
     const initialState = searchParams.getAll("color")
-
-    console.log(searchParams.getAll("color"))
+    const initialOrder = searchParams.get("order");
+    // console.log(searchParams.getAll("order"))
+    const [order, setOrder] = useState(initialOrder || "");
 
     const [color,setColor] = useState(initialState || []);
     console.log(color)
+
+ 
+
+
 const handleFilter = (e) => {
     let newCat = [...color];
+
 
     if(newCat.includes(e.target.value)){
         newCat.splice(newCat.indexOf(e.target.value),1)
@@ -26,13 +32,18 @@ const handleFilter = (e) => {
     setColor(newCat)
 }
 
+const handleSort = (e) => {
+    setOrder(e.target.value);
+  };
+
 useEffect(() => {
     const params = {
         color
     }
+    order && (params.order = order)
     setSearhParams(params)
 
-},[color])
+},[color,order])
 
 
   return (
@@ -68,7 +79,24 @@ useEffect(() => {
 
        
     </div>
-    
+    <div onChange={handleSort}>
+
+        <h1>Sort by price</h1>
+        <input
+          type="radio"
+          name="order"
+          value={"asc"}
+          defaultChecked={order === "asc"}
+        />
+        <label>Ascending</label>
+        <input
+          type="radio"
+          name="order"
+          value={"desc"}
+          defaultChecked={order === "desc"}
+        />
+        <label>Descending</label>
+      </div> 
    
     </div>
   )

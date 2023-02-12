@@ -18,14 +18,16 @@ const ProductList = () => {
     const location = useLocation();
     const [searchParams] = useSearchParams()
 
-
+    let paramObj = {
+        params: {
+            color: searchParams.getAll('color'),
+            _sort: searchParams.get('order') && 'price',
+            _order: searchParams.get('order')
+        }
+    }
     useEffect(() => {
 
-        let paramObj = {
-            params: {
-                color: searchParams.getAll('color')
-            }
-        }
+        
         // dispatch()
         dispatch(getProduct(paramObj))
     },[location.search])
@@ -42,7 +44,7 @@ const ProductList = () => {
 
   return (
     <>
-    <Navbar2 />
+    {/* <Navbar2 /> */}
         <Filters />
     <Sidebar />
     <div className={styles.productList}>

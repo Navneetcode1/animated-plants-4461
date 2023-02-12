@@ -91,7 +91,7 @@ console.log(pro)
 
     return (
         <>
-            <Navbar2 />
+            {/* <Navbar2 />  */}
             <div className={styles.main}>
                 <div className={styles.images}>
                     <div>
@@ -124,7 +124,7 @@ console.log(pro)
                     </div>
                     <div className={styles.cartAdd}>
                         <button onClick={handleCart} disabled ={clicked}>ADD TO BAG</button>
-                        <button className={styles.wish}>Wishlist</button>
+                       
                     </div>
                     <div>
                         <p className={styles.discription}>
