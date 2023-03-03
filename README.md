@@ -2,7 +2,7 @@
 // team myntra.com
 
 # Fashion Mantra
- <img src="https://cdn-images-1.medium.com/max/1000/1*IXF_a1djYTCd_BfIG26YVQ.jpeg" width="200px" alt="12" border="0" />
+<!--  <img src="https://cdn-images-1.medium.com/max/1000/1*IXF_a1djYTCd_BfIG26YVQ.jpeg" width="200px" alt="12" border="0" /> -->
 Fashion Mantra is a clone of Myntra.com which is an E-Commerce Website for premium clothes and accessories.
 
  - Deployed Netlify link:- https://fashionmantra.vercel.app/
@@ -32,7 +32,7 @@ Fashion Mantra is a clone of Myntra.com which is an E-Commerce Website for premi
 ## Few screenshots from our website :
 
 <div>
-  <h4>Home :</h4>
+<!--   <h4>Home :</h4>
   <img src="https://cdn-images-1.medium.com/max/1000/1*1_e4fnuGenG-jKrXOjLpeQ.png" alt="12" border="0" />
   <img src="https://cdn-images-1.medium.com/max/1000/1*AN5lILRbJ36nGpObweY4Mw.png" alt="14" border="0" />
   <h4>Product Page :</h4>
@@ -48,7 +48,7 @@ Fashion Mantra is a clone of Myntra.com which is an E-Commerce Website for premi
   <img src="https://cdn-images-1.medium.com/max/1000/1*q551k3EhYtF4uOddNT3RLw.png" alt="14" border="0" />
    <h4>Admin Customer Page:</h4>
   <img src="https://cdn-images-1.medium.com/max/1000/1*iSXiY1WbMx0Maf70GtF8kA.png" alt="14" border="0" />
-  
+   -->
 </div>
 
 
