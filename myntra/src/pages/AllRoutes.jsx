@@ -36,7 +36,6 @@ const AllRoutes = () => {
             <Route path='/mens' element={<ProductList />} />
             <Route path='/mens/men/:id' element={<SinglePro />} />
 
-
             <Route path='/checkout' element={<CartPayment />} />
 
             <Route path='/checkout/address' element={<CartAddress />} />

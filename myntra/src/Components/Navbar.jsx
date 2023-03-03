@@ -1,54 +1,57 @@
 import {
-  Text, Box, useDisclosure, Modal, ModalOverlay, ModalContent,
-  ModalHeader, ModalCloseButton, ModalBody, ModalFooter, Flex, Input
-} from '@chakra-ui/react'
-import { AiOutlineShoppingCart } from "react-icons/ai"
-import React, { useState } from 'react'
+  Text,
+  Box,
+  useDisclosure,
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalCloseButton,
+  ModalBody,
+  ModalFooter,
+  Flex,
+  Input,
+} from "@chakra-ui/react";
+import { AiOutlineShoppingCart } from "react-icons/ai";
+import React, { useState } from "react";
 
 // import React from 'react'
 
-import { FaUser, FaRegHeart, FaShoppingBag } from "react-icons/fa"
-import { Stack, InputLeftElement, InputGroup } from '@chakra-ui/react'
-import { Link } from "react-router-dom"
+import { FaUser, FaRegHeart, FaShoppingBag } from "react-icons/fa";
+import { Stack, InputLeftElement, InputGroup } from "@chakra-ui/react";
+import { Link } from "react-router-dom";
 
 // import { Input } from '@chakra-ui/react'
 
-
 // const data=
 
-
-
 const Navbar = () => {
-  const { isOpen, onOpen, onClose } = useDisclosure()
-  const [size, setSize] = React.useState('md')
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const [size, setSize] = React.useState("md");
 
-  const [value, setValue] = useState("")
-
-
+  const [value, setValue] = useState("");
 
   const handleSizeClick = (newSize) => {
-    setSize(newSize)
-    onOpen()
-  }
+    setSize(newSize);
+    onOpen();
+  };
 
-  const sizes = ['Mens ▼', 'Womens ▼', 'Kids ▼'];
-  const shadow = "box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;"
+  const sizes = ["Mens ▼", "Womens ▼", "Kids ▼"];
+  const shadow =
+    "box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;";
   const sizes1 = "6md";
 
-
-
   const handleChange = (event) => {
+    setValue(event.target.value);
+  };
 
-    setValue(event.target.value)
+  const handleSearch = () => {};
 
-  }
+  const getmensdata = () => {};
 
+  const getwomensdata = () => {};
 
-  const handleSearch = () => {
-
-  }
-
-
+  const getkidsdata = () => {};
 
   return (
     // <Flex m={'auto'} w={'98%'} justifyContent={'space-between'} alignItems={'center'}>
@@ -78,50 +81,78 @@ const Navbar = () => {
     //     </Box>
     // </Flex>
     <>
-      {sizes.map((size) => (
+      {/* {sizes.map((size) => (
         <Text
-          //   style={{border:"none"}}
           border={"none"}
           boxShadow={shadow}
           onClick={() => handleSizeClick(size)}
           key={size}
           m={4}
         >{`${size}`}</Text>
-      ))}
-      <Flex marginTop={"13px"} gap="20px">
-        <h1>Home & Living</h1>
-        <h1>Beauty</h1>
-        <h1>Studio</h1>
-        <Stack spacing={4}>
+      ))} */}
+
+      <Flex
+        marginTop={"13px"}
+        gap="20px"
+        justifyContent={"space-around"}
+        width={"80%"}
+      >
+        <button onClick={getmensdata}>
+          <h1>Mens</h1>
+        </button>
+        <button onClick={getwomensdata}>
+          <h1>Womens</h1>
+        </button>
+        <button onClick={getkidsdata}>
+          <h1>Kids</h1>
+        </button>
+        <button>
+          <h1>Home & Living</h1>
+        </button>
+        <button>
+          <h1>Beauty</h1>
+        </button>
+        <button>
+          <h1>Studio</h1>
+        </button>
+
+        <Stack>
           <InputGroup>
             <InputLeftElement
-              pointerEvents='none'
-            //   children={<PhoneIcon color='gray.300' />}
+              pointerEvents="none"
+              //   children={<PhoneIcon color='gray.300' />}
             />
 
             <button onClick={() => handleSearch(value)}>🔎</button>
-            <Input type='search' value={value} onChange={handleChange} placeholder=' Search for products' />
+            <Input
+              type="search"
+              value={value}
+              onChange={handleChange}
+              placeholder=" Search for products"
+            />
 
-
-            {/* <Input type='search' placeholder=' Search for products' /> */}
             <Link to="/checkout">
               <AiOutlineShoppingCart size="35px" padding={4} />
-
             </Link>
-
           </InputGroup>
         </Stack>
       </Flex>
-
-
       <Modal onClose={onClose} size={sizes1} isOpen={isOpen}>
         <ModalOverlay />
         <ModalContent>
           <ModalHeader>
-
-            <Box fontSize={"md"} gap="10px" m={"auto"} display={"flex"} justifyContent={"space-evenly"} bg={"white"}>
-              <Box color={"gold"} >
-                <Text color={"red"} fontSize={"md"}>Top-Wear</Text>
+            <Box
+              fontSize={"md"}
+              gap="10px"
+              m={"auto"}
+              display={"flex"}
+              justifyContent={"space-evenly"}
+              bg={"white"}
+            >
+              <Box color={"gold"}>
+                <Text color={"red"} fontSize={"md"}>
+                  Top-Wear
+                </Text>
                 <Link to="/mens">
                   <Text border={"none"} color={"black"}>
                     T-Shirt
@@ -146,85 +177,167 @@ const Navbar = () => {
                   Rain jackets
                 </Text>
 
-
                 <Box>
-                  <Text color={"red"} fontSize={"md"}>Indian & Festive wear</Text>
+                  <Text color={"red"} fontSize={"md"}>
+                    Indian & Festive wear
+                  </Text>
                 </Box>
-                <Text color={"black"} fontSize={"md"}>Kurta & Kurtis tradionational </Text>
-                <Text color={"black"} fontSize={"md"}>Sherwani </Text>
-                <Text color={"black"} fontsize={"md"}>Nehru Jackets</Text>
+                <Text color={"black"} fontSize={"md"}>
+                  Kurta & Kurtis tradionational{" "}
+                </Text>
+                <Text color={"black"} fontSize={"md"}>
+                  Sherwani{" "}
+                </Text>
+                <Text color={"black"} fontsize={"md"}>
+                  Nehru Jackets
+                </Text>
                 <Text color={"black"}>Dhotis</Text>
-
               </Box>
 
-
-              <Box fontsize={"md"} >
-                <Text color={"red"} fontsize={"sm"}>Bottom Wear</Text>
-                <Text color={"black"} fontsize={"md"}>Jeans</Text>
-                <Text color={"black"} fontsize={"md"} >Casual Trouser</Text>
-                <Text color={"black"} fontsize={"md"}>Formal Trouser</Text>
-                <Text color={"black"} fontsize={"md"}>Shorts</Text>
-                <Text color={"black"} fontsize={"md"}>Engage</Text>
-                <Text color={"black"} fontsize={"md"}>Track pants & Trousers</Text>
-                <Text color={"red"} fontSize={"md"}>Inner Wear </Text>
-                <Text color={"black"} fontsize={"md"}>Breif & Trunks</Text>
-                <Text color={"black"} fontsize={"md"}>Boxers</Text>
-                <Text color={"red"} fontsize={"md"}>Plus Size</Text>
-
+              <Box fontsize={"md"}>
+                <Text color={"red"} fontsize={"sm"}>
+                  Bottom Wear
+                </Text>
+                <Text color={"black"} fontsize={"md"}>
+                  Jeans
+                </Text>
+                <Text color={"black"} fontsize={"md"}>
+                  Casual Trouser
+                </Text>
+                <Text color={"black"} fontsize={"md"}>
+                  Formal Trouser
+                </Text>
+                <Text color={"black"} fontsize={"md"}>
+                  Shorts
+                </Text>
+                <Text color={"black"} fontsize={"md"}>
+                  Engage
+                </Text>
+                <Text color={"black"} fontsize={"md"}>
+                  Track pants & Trousers
+                </Text>
+                <Text color={"red"} fontSize={"md"}>
+                  Inner Wear{" "}
+                </Text>
+                <Text color={"black"} fontsize={"md"}>
+                  Breif & Trunks
+                </Text>
+                <Text color={"black"} fontsize={"md"}>
+                  Boxers
+                </Text>
+                <Text color={"red"} fontsize={"md"}>
+                  Plus Size
+                </Text>
               </Box>
               <Box fontsize={"md"}>
-
-                <Text color={"red"} fontsize={"md"}>Foot Wear</Text>
-                <Text color={"black"} fontsize={"md"} >Formal Shoes</Text>
-                <Text color={"black"} fontsize={"md"} >Sports Shoes</Text>
-                <Text color={"black"} fontsize={"md"}>Snekers</Text>
-                <Text color={"black"} fontsize={"md"} >Sandals & floaters</Text>
-                <Text color={"black"} fontsize={"md"} >Socks</Text>
-                <Text color={"red"} fontsize={"md"}>Personal care & Groming</Text>
-                <Text color={"red"} fontsize={"md"}>Sunglasses & frames </Text>
-                <Text color={"red"} fontsize={"md"}>Watches</Text>
-
+                <Text color={"red"} fontsize={"md"}>
+                  Foot Wear
+                </Text>
+                <Text color={"black"} fontsize={"md"}>
+                  Formal Shoes
+                </Text>
+                <Text color={"black"} fontsize={"md"}>
+                  Sports Shoes
+                </Text>
+                <Text color={"black"} fontsize={"md"}>
+                  Snekers
+                </Text>
+                <Text color={"black"} fontsize={"md"}>
+                  Sandals & floaters
+                </Text>
+                <Text color={"black"} fontsize={"md"}>
+                  Socks
+                </Text>
+                <Text color={"red"} fontsize={"md"}>
+                  Personal care & Groming
+                </Text>
+                <Text color={"red"} fontsize={"md"}>
+                  Sunglasses & frames{" "}
+                </Text>
+                <Text color={"red"} fontsize={"md"}>
+                  Watches
+                </Text>
               </Box>
               <Box fontSize={"md"}>
-                <Text color={"red"} fontsize={"md"}>Sports & active wear</Text>
-                <Text color={"black"} fontsize={"md"}>Sport Sandals</Text>
-                <Text color={"black"} fontsize={"md"}>Sports Shoes</Text>
-                <Text color={"black"} fontsize={"md"}>Active T-shirts</Text>
-                <Text color={"black"} fontsize={"md"}>Track pants & Shorts</Text>
-                <Text color={"black"} fontsize={"md"}>Track Suits</Text>
-                <Text color={"black"} fontsize={"md"}>Jacket & sweat-shirts</Text>
-                <Text color={"black"} fontsize={"md"}>Swimmers</Text>
-                <Text color={"red"} fontsize={"md"}>Gadgets</Text>
-                <Text color={"black"} fontsize={"md"}>Smart Variables</Text>
-                <Text color={"black"} fontsize={"md"}>Fitness Gadgets</Text>
-                <Text color={"black"} fontsize={"md"}>Speakers</Text>
+                <Text color={"red"} fontsize={"md"}>
+                  Sports & active wear
+                </Text>
+                <Text color={"black"} fontsize={"md"}>
+                  Sport Sandals
+                </Text>
+                <Text color={"black"} fontsize={"md"}>
+                  Sports Shoes
+                </Text>
+                <Text color={"black"} fontsize={"md"}>
+                  Active T-shirts
+                </Text>
+                <Text color={"black"} fontsize={"md"}>
+                  Track pants & Shorts
+                </Text>
+                <Text color={"black"} fontsize={"md"}>
+                  Track Suits
+                </Text>
+                <Text color={"black"} fontsize={"md"}>
+                  Jacket & sweat-shirts
+                </Text>
+                <Text color={"black"} fontsize={"md"}>
+                  Swimmers
+                </Text>
+                <Text color={"red"} fontsize={"md"}>
+                  Gadgets
+                </Text>
+                <Text color={"black"} fontsize={"md"}>
+                  Smart Variables
+                </Text>
+                <Text color={"black"} fontsize={"md"}>
+                  Fitness Gadgets
+                </Text>
+                <Text color={"black"} fontsize={"md"}>
+                  Speakers
+                </Text>
               </Box>
               <Box fontsize={"md"}>
-                <Text color={"red"} fontsize={"md"}>Fashion Accesories</Text>
-                <Text color={"black"} fontsize={"md"}>Wallets</Text>
-                <Text color={"black"} fontsize={"md"}>Belts</Text>
-                <Text color={"black"} fontsize={"md"}>Perfumes & Body Mists</Text>
-                <Text color={"black"} fontsize={"md"}>Trimmers</Text>
-                <Text color={"black"} fontsize={"md"}>Deodrands</Text>
-                <Text color={"black"} fontsize={"md"}>Ties,Cufflinks & Pocket Squares</Text>
-                <Text color={"black"} fontsize={"md"}>Caps & Hats</Text>
-                <Text color={"black"} fontsize={"md"}>Phone & Cases</Text>
-                <Text color={"black"} fontsize={"md"}>Helmets</Text>
-                <Text color={"red"} fontsize={"md"}>Bags & Backpads</Text>
-                <Text color={"red"} fontsize={"md"}>Luggage & Trolleys</Text>
+                <Text color={"red"} fontsize={"md"}>
+                  Fashion Accesories
+                </Text>
+                <Text color={"black"} fontsize={"md"}>
+                  Wallets
+                </Text>
+                <Text color={"black"} fontsize={"md"}>
+                  Belts
+                </Text>
+                <Text color={"black"} fontsize={"md"}>
+                  Perfumes & Body Mists
+                </Text>
+                <Text color={"black"} fontsize={"md"}>
+                  Trimmers
+                </Text>
+                <Text color={"black"} fontsize={"md"}>
+                  Deodrands
+                </Text>
+                <Text color={"black"} fontsize={"md"}>
+                  Ties,Cufflinks & Pocket Squares
+                </Text>
+                <Text color={"black"} fontsize={"md"}>
+                  Caps & Hats
+                </Text>
+                <Text color={"black"} fontsize={"md"}>
+                  Phone & Cases
+                </Text>
+                <Text color={"black"} fontsize={"md"}>
+                  Helmets
+                </Text>
+                <Text color={"red"} fontsize={"md"}>
+                  Bags & Backpads
+                </Text>
+                <Text color={"red"} fontsize={"md"}>
+                  Luggage & Trolleys
+                </Text>
               </Box>
-
-
             </Box>
-
-
-
-
           </ModalHeader>
 
-          <ModalBody>
-            {/* <Lorem count={2} /> */}
-          </ModalBody>
+          <ModalBody>{/* <Lorem count={2} /> */}</ModalBody>
 
           <ModalFooter>
             <ModalCloseButton />
@@ -232,14 +345,7 @@ const Navbar = () => {
         </ModalContent>
       </Modal>
     </>
-  )
-}
+  );
+};
 
-
-
-
-
-
-export default Navbar
-
-
+export default Navbar;
