@@ -89,11 +89,7 @@ const Navbar = () => {
         >{`${size}`}</Text>
       ))}
       <Flex marginTop={"13px"} gap="20px">
-
         <h1>Home & Living</h1>
-
-
-
         <h1>Beauty</h1>
         <h1>Studio</h1>
         <Stack spacing={4}>

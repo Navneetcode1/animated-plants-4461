@@ -1,6 +1,7 @@
 //cartpage
 import React, { useEffect, useState } from "react";
 import styles from "./CartPayment.module.css";
+import { MdOutlineDeleteForever } from "react-icons/md";
 
 // import fashion_mantra as sitelogo "../Pictures/fashion_mantra.png";
 import logoicon from "../pictures/logoicon.png";
@@ -13,6 +14,7 @@ import EmptyCart from "../PagesA/EmptyCart";
 // import pic from "./pictures/fashion_mantra.png";
 
 export const CartPayment = () => {
+  const [count, setCount] = useState(1);
   const [cartArr, setCartArr] = useState([]);
   const [currUser, setCurrUser] = useState("");
   // const [totalmrp, setTotalmrp] = useState(0);
@@ -20,7 +22,7 @@ export const CartPayment = () => {
   const userId = JSON.parse(localStorage.getItem("userId")) || "";
   // console.log(userId)
   const cartData = JSON.parse(localStorage.getItem("cartData")) || [];
-  const totalmrp = cartData?.reduce((ac, i) => ac + i.off_price, 0);
+  const totalmrp = cartData?.reduce((ac, i) => ac + Number(i.off_price), 0);
   const totaloff = cartData?.reduce((ac, i) => ac + Number(i.price), 0);
   console.log(totaloff);
 
@@ -28,11 +30,17 @@ export const CartPayment = () => {
   const userData = useSelector((store) => store.usergetdatareducer.userdata);
   console.log("user", userData);
 
+  const handledeleteprod = (id) => {
+    let arr = cartData.filter((el) => el.id !== id);
+    localStorage.setItem("cartData", JSON.stringify(arr));
+    console.log("id:", id, "arr:", arr);
+  };
+
   useEffect(() => {
     dispatch(usergetdataaction());
     const loginUserData = userData?.filter((ele) => ele.id == userId);
     console.log("loginUserData", loginUserData);
-  }, []);
+  }, [handledeleteprod]);
 
   // const discountedprice = totalmrp - offp;
   // setTotalmrp(ans);
@@ -124,7 +132,6 @@ export const CartPayment = () => {
                 <div className={styles.offersheadcre}>
                   <details>
                     <summary>
-                      {" "}
                       <button>Show More</button>
                     </summary>
                     <p>
@@ -149,7 +156,7 @@ export const CartPayment = () => {
 
               <div className={styles.proditemcardlist}>
                 {cartData.length
-                  ? cartData.map((item) => {
+                  ? cartData.map((item, ind) => {
                       return (
                         <div
                           key={Math.random()}
@@ -172,11 +179,36 @@ export const CartPayment = () => {
                               <div>
                                 <div>
                                   <div>Size: {item.sizes && item.sizes[1]}</div>
+                                  {/* <div>Size: {item.sizes && item.sizes[1]}</div> */}
                                 </div>
                               </div>
                               <div>
-                                <div>
-                                  <div>Qty: 1</div>
+                                <div style={{ display: "flex", gap: "15px" }}>
+                                  <div> Qty:</div>
+                                  <div>
+                                    {/* ------------------------------------------------ */}
+                                    <button
+                                      disabled={count == 1}
+                                      onClick={() =>
+                                        setCount((prev) => prev - 1)
+                                      }
+                                    >
+                                      -
+                                    </button>
+                                    {/* ----------------------------------------------------- */}
+                                  </div>
+                                  <div>{count}</div>
+                                  <div>
+                                    {" "}
+                                    <button
+                                      style={{ border: "none" }}
+                                      onClick={() =>
+                                        setCount((prev) => prev + 1)
+                                      }
+                                    >
+                                      +
+                                    </button>
+                                  </div>
                                 </div>
                               </div>
                             </div>
@@ -199,6 +231,14 @@ export const CartPayment = () => {
                             <div className={styles.expressdelivery}>
                               Express delivery in 2 days
                             </div>
+                          </div>
+                          <div style={{ position: "relative" }}>
+                            <MdOutlineDeleteForever
+                              size="35px"
+                              padding={4}
+                              display="flex"
+                              onClick={() => handledeleteprod(item.id)}
+                            />
                           </div>
                         </div>
                       );

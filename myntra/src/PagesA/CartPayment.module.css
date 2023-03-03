@@ -212,10 +212,10 @@
 }
 
 .proditemcardcard{
-    height: 195px;
+    height: 205px;
     /* width: 594px; */
     background-color: white;
-    padding: 12px 12px 0px;
+    padding: 12px 12px 10px;
     display: flex;
     border-radius: 3px;
     border: 1px solid gray;
@@ -251,6 +251,7 @@
 }
 
 .expressdelivery{
+    
     margin-top: -10px;
     text-align: left;
     color: black;
@@ -264,21 +265,27 @@
     padding: 8px 0px;
     display: flex;
     height: 36px;
+    /* border: 1px solid green; */
 }
 
 .itemaincontainer > div{
     margin: -5px 8px 0px 0px;
+    /* border: 1px solid pink; */
 }
 
 .itemaincontainer > div > div{
     margin: 0px 12px 0px 0px;
     padding: 2px 8px;
-    background-color: #f5f5f6;
+    /* border: 1px solid red; */
+    /* background-color: #f5f5f6; */
 }
 
-.itemaincontainer > div > div > div{
+.itemaincontainer > div > div > div:nth-child(even){
     color: black;
     font-size: 14px;
+    background-color: #f5f5f6;
+    /* border: 1px solid black; */
+    padding: 0px 8px;
 }
     
     
