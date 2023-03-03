@@ -17,6 +17,7 @@ import { LoginPage } from "../Upage/LoginPage";
 import { AdminPage } from "../Upage/AdminPage"
 import { AdminLogin } from "../Upage/AdminLogin"
 import ProductList from '../Components/CompnentsT/ProductList'
+import PrivateRoutes from '../Redux/PrivateRouts/PrivateRoutes'
 
 
 
@@ -36,10 +37,11 @@ const AllRoutes = () => {
             <Route path='/mens' element={<ProductList />} />
             <Route path='/mens/men/:id' element={<SinglePro />} />
 
-            <Route path='/checkout' element={<CartPayment />} />
 
-            <Route path='/checkout/address' element={<CartAddress />} />
-            <Route path='/checkout/address/payment' element={<FinalPayment />} />
+
+            <Route path='/checkout' element={<PrivateRoutes><CartPayment /></PrivateRoutes>} />
+            <Route path='/checkout/address' element={<PrivateRoutes><CartAddress /></PrivateRoutes>} />
+            <Route path='/checkout/address/payment' element={<PrivateRoutes><FinalPayment /></PrivateRoutes>} />
 
 
         </Routes>

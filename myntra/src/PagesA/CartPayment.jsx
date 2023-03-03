@@ -22,7 +22,9 @@ export const CartPayment = () => {
   const userId = JSON.parse(localStorage.getItem("userId")) || "";
   // console.log(userId)
   const cartData = JSON.parse(localStorage.getItem("cartData")) || [];
+
   const totalmrp = cartData?.reduce((ac, i) => ac + Number(i.off_price), 0);
+
   const totaloff = cartData?.reduce((ac, i) => ac + Number(i.price), 0);
   console.log(totaloff);
 
