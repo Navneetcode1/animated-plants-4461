@@ -29,7 +29,7 @@ Fashion Mantra is a clone of Myntra.com which is an E-Commerce Website for premi
 
  **html** |  **css** |  **chakra-ui** |  **ReactJs** 
 
-## Few screenshots from our website :
+//## Few screenshots from our website :
 
 <div>
 <!--   <h4>Home :</h4>
