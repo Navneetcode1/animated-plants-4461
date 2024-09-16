@@ -20,7 +20,6 @@ const ProductList = () => {
 
 
     useEffect(() => {
-
         let paramObj = {
             params: {
                 color: searchParams.getAll('color')

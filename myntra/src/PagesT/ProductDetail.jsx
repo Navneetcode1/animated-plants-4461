@@ -7,19 +7,12 @@ import Navbar2 from '../Components/Navbar2';
 import usergetdataaction from '../Redux/Auth/UserSignup/usergetdataaction';
 import cartaction from '../Redux/Cartrr/cartaction';
 import styles from './ProductDetail.module.css'
+
+
 const ProductDetail = ({ pro }) => {
-
-
-    const [clicked,setClicked] = useState(false);
-
-console.log(pro)
-
-  
+    const [clicked, setClicked] = useState(false);
     console.log(pro)
-
-
     const dispatch = useDispatch()
-
     useEffect(() => {
         // axios.get("https://cheerful-trunks-duck.cyclic.app/cart")
         // .then((res) => {
@@ -29,20 +22,16 @@ console.log(pro)
         // .catch((err) => {
         //     console.log(err)
         // })
-
         console.log(clicked)
-
         // dispatch(usergetdataaction());
-       
-        
-    },[clicked])
+    }, [clicked])
 
 
 
-      
 
 
- 
+
+
 
     const userData = useSelector(store => store.usergetdatareducer.userdata)
 
@@ -78,15 +67,15 @@ console.log(pro)
         // })
 
 
-            // const newUserData = userData.filter(el => el.id == userId)
-            // console.log(newUserData[0].cart.push(newUserData));
+        // const newUserData = userData.filter(el => el.id == userId)
+        // console.log(newUserData[0].cart.push(newUserData));
 
-            
-            setClicked(true)
-            // dispatch(cartaction(userId,pro))
+
+        setClicked(true)
+        // dispatch(cartaction(userId,pro))
     }
 
-    
+
 
 
     return (
@@ -123,7 +112,7 @@ console.log(pro)
                         <button>44</button>
                     </div>
                     <div className={styles.cartAdd}>
-                        <button onClick={handleCart} disabled ={clicked}>ADD TO BAG</button>
+                        <button onClick={handleCart} disabled={clicked}>ADD TO BAG</button>
                         <button className={styles.wish}>Wishlist</button>
                     </div>
                     <div>
